@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalVariableEntities>
+   <description></description>
+   <name>default</name>
+   <tag></tag>
+   <defaultProfile>true</defaultProfile>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://katalon-test.s3.amazonaws.com/aut/html/index.html'</initValue>
+      <name>sampeAUTIndexPage</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://katalon-test.s3.amazonaws.com/aut/html/form.html'</initValue>
+      <name>sampleAUTWebFormPage</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://katalon-test.s3.amazonaws.com/aut/html/js-dialog.html'</initValue>
+      <name>sampleAUTPromptPage</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://katalon-test.s3.amazonaws.com/aut/html/alert.html'</initValue>
+      <name>sampleAUTAlertPage</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://katalon-test.s3.amazonaws.com/aut/html/open-window.html'</initValue>
+      <name>sampleAUTOpenNewWindowPage</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://katalon-demo-cura.herokuapp.com/'</initValue>
+      <name>curaAUT</name>
+   </GlobalVariableEntity>
+</GlobalVariableEntities>
