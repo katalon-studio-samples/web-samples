@@ -29,6 +29,8 @@ class CloseBrowserTestListener {
      */
     @AfterTestCase
     def sampleAfterTestCase(TestCaseContext testCaseContext) {
-//        WebUI.closeBrowser()
+        WebUI.closeBrowser()
     }
+	
+	
 }

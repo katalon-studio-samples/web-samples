@@ -20,7 +20,7 @@ import org.apache.commons.lang3.SystemUtils
 if (SystemUtils.IS_OS_WINDOWS) {
     WebUI.openBrowser("")
     
-    WebUI.authenticate("http://the-internet.herokuapp.com/basic_auth", "admin", "admin", 5)
+    WebUI.authenticate(GlobalVariable.basicAuthAUT, "admin", "admin", GlobalVariable.defaultTimeout)
     
     WebUI.verifyTextPresent("Congratulations! You must have the proper credentials.", false)
 }

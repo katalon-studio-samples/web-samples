@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>handle click element</name>
+   <name>close window by url</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>5bcff1fd-5269-4884-a86b-19cd5cde4600</testCaseGuid>
+   <testCaseGuid>4cbf0ea4-60d8-45d7-80c6-86a74533c2d0</testCaseGuid>
 </TestCaseEntity>

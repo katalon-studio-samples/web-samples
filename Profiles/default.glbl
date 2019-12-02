@@ -34,4 +34,34 @@
       <initValue>'https://katalon-demo-cura.herokuapp.com/'</initValue>
       <name>curaAUT</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'http://the-internet.herokuapp.com/basic_auth'</initValue>
+      <name>basicAuthAUT</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>5</initValue>
+      <name>defaultTimeout</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://katalon-test.s3.amazonaws.com/aut/html/double-click.html'</initValue>
+      <name>sampleAUTDoubleClickPage</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://katalon-test.s3.amazonaws.com/aut/html/dragdrop.html'</initValue>
+      <name>sampleAUTDragDropPage</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://katalon-test.s3.amazonaws.com/aut/html/confirm.html'</initValue>
+      <name>sampleAUTConfirmPage</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://katalon-test.s3.amazonaws.com/aut/html/link.html'</initValue>
+      <name>sampleAUTLinkPage</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

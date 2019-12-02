@@ -14,17 +14,17 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
-import org.openqa.selenium.Keys as Keys
+import org.openqa.selenium.WebElement
+import com.kms.katalon.core.webui.driver.DriverFactory
 
-WebUI.openBrowser(GlobalVariable.sampeAUTIndexPage)
+WebUI.openBrowser(GlobalVariable.sampleAUTWebFormPage)
 
-def webFormLink = findTestObject('Object Repository/Page_Demo AUT/a_Web Form')
+TestObject lastnameInput = findTestObject('Object Repository/Page_Demo AUT/input_Last name_lastName')
 
-WebUI.click(webFormLink)
+WebUI.focus(lastnameInput)
 
-WebUI.verifyEqual(WebUI.getUrl(), GlobalVariable.sampleAUTWebFormPage)
+'Find focused element'
+WebElement focusedElement = DriverFactory.getWebDriver().switchTo().activeElement()
 
-WebUI.back()
-
-WebUI.verifyEqual(WebUI.getUrl(), GlobalVariable.sampeAUTIndexPage)
-
+'Verify the text input has been focused'
+WebUI.verifyEqual(WebUI.getAttribute(lastnameInput, "id"), focusedElement.getAttribute("id"))

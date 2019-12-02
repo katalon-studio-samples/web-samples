@@ -15,19 +15,26 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
-import com.kms.katalon.core.webui.driver.DriverFactory
+def button = findTestObject('Object Repository/Page_Demo AUT/button_Click me')
 
-import org.openqa.selenium.Keys as Keys
+WebUI.openBrowser(GlobalVariable.sampleAUTPromptPage)
 
-WebUI.openBrowser(GlobalVariable.sampleAUTOpenNewWindowPage)
+'Click the button to show the alert'
+WebUI.click(button)
 
-WebUI.setText(findTestObject('Object Repository/Page_Demo AUT/input_Open New Window_window-title'), 'www.google.com')
+WebUI.verifyAlertPresent(GlobalVariable.defaultTimeout)
 
-// Click to open new window
-WebUI.click(findTestObject('Object Repository/Page_Demo AUT/button_Open New Window'))
+WebUI.verifyEqual(WebUI.getAlertText(), "Please enter your name")
 
-WebUI.verifyEqual(DriverFactory.getWebDriver().getWindowHandles().size(), 2)
+WebUI.acceptAlert()
 
-WebUI.closeWindowUrl(GlobalVariable.sampleAUTOpenNewWindowPage + "?title=www.google.com") // The URL of the second window
+WebUI.verifyAlertNotPresent(GlobalVariable.defaultTimeout)
 
-WebUI.verifyEqual(DriverFactory.getWebDriver().getWindowHandles().size(), 1)
+'Click the button to show the alert again'
+WebUI.click(button)
+
+WebUI.verifyAlertPresent(GlobalVariable.defaultTimeout)
+
+WebUI.dismissAlert()
+
+WebUI.verifyAlertNotPresent(GlobalVariable.defaultTimeout)

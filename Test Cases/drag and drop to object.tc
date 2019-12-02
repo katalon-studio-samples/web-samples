@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>handle alert</name>
+   <name>drag and drop to object</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>9d4aba7d-dfb3-4429-9e14-e22d569c9a3f</testCaseGuid>
+   <testCaseGuid>3a225faf-ed53-4705-8cf3-7d829cab17b3</testCaseGuid>
 </TestCaseEntity>

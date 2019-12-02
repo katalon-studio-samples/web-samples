@@ -15,13 +15,10 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.openBrowser(GlobalVariable.sampleAUTAlertPage)
+def draggedBox = findTestObject('Object Repository/Page_Demo AUT/div_Drag me')
 
-//click this to show alert
-WebUI.click(findTestObject('Object Repository/Page_Demo AUT/button_Click me_alert'))
+WebUI.openBrowser(GlobalVariable.sampleAUTDragDropPage)
 
-WebUI.verifyAlertPresent(5)
+WebUI.dragAndDropByOffset(draggedBox, 0, 0)
 
-WebUI.acceptAlert()
 
-WebUI.verifyAlertNotPresent(5)

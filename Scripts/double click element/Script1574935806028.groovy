@@ -15,6 +15,9 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.navigateToUrl(GlobalVariable.sampeAUTIndexPage)
+WebUI.openBrowser(GlobalVariable.sampleAUTDoubleClickPage)
 
-WebUI.verifyEqual(WebUI.getUrl(), GlobalVariable.sampeAUTIndexPage)
+WebUI.doubleClick(findTestObject('Object Repository/Page_Demo AUT/button_Double click me'))
+
+'Verify the text present on page as the result of double-clicking the button'
+WebUI.verifyTextPresent("You have double clicked!", false)

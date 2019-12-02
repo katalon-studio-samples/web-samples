@@ -21,4 +21,4 @@ def radioButton = findTestObject('Object Repository/Page_Demo AUT/input_Male_gen
 
 WebUI.check(radioButton)
 
-WebUI.verifyElementChecked(radioButton, 5)
+WebUI.verifyElementChecked(radioButton, GlobalVariable.defaultTimeout)

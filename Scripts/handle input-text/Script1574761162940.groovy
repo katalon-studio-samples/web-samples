@@ -23,8 +23,8 @@ def inputText = "John"
 
 WebUI.setText(firstNameInput, inputText)
 
-WebUI.verifyElementAttributeValue(firstNameInput, "value", inputText, 5)
+WebUI.verifyElementAttributeValue(firstNameInput, "value", inputText, GlobalVariable.defaultTimeout)
 
 WebUI.clearText(firstNameInput)
 
-WebUI.verifyElementAttributeValue(firstNameInput, "value", "", 5)
+WebUI.verifyElementAttributeValue(firstNameInput, "value", "", GlobalVariable.defaultTimeout)

@@ -14,7 +14,16 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
+import org.openqa.selenium.WebElement
 
-WebUI.navigateToUrl(GlobalVariable.sampeAUTIndexPage)
+import com.kms.katalon.core.webui.common.WebUiCommonHelper
 
-WebUI.verifyEqual(WebUI.getUrl(), GlobalVariable.sampeAUTIndexPage)
+WebUI.openBrowser(GlobalVariable.sampleAUTAlertPage)
+
+WebElement button = WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Page_Demo AUT/button_Click me_alert'), GlobalVariable.defaultTimeout)
+
+WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(button))
+
+'Verify alert present as the result of button click'
+WebUI.verifyAlertPresent(GlobalVariable.defaultTimeout)
+

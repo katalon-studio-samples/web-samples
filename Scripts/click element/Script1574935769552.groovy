@@ -15,6 +15,13 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.navigateToUrl(GlobalVariable.sampeAUTIndexPage)
+WebUI.openBrowser(GlobalVariable.sampleAUTPromptPage)
 
-WebUI.verifyEqual(WebUI.getUrl(), GlobalVariable.sampeAUTIndexPage)
+//'Click this button to show an alert'
+//WebUI.click(findTestObject('Object Repository/Page_Demo AUT/button_Click me'))
+//
+//'Verify the alert present as the result of the button click'
+//WebUI.verifyAlertPresent(GlobalVariable.defaultTimeout)
+
+println "test"
+

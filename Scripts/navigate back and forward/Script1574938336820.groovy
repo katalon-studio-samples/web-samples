@@ -14,7 +14,21 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
+import org.openqa.selenium.Keys as Keys
 
-WebUI.navigateToUrl(GlobalVariable.sampeAUTIndexPage)
+WebUI.openBrowser(GlobalVariable.sampeAUTIndexPage)
+
+def webFormLink = findTestObject('Object Repository/Page_Demo AUT/a_Web Form')
+
+WebUI.click(webFormLink)
+
+WebUI.verifyEqual(WebUI.getUrl(), GlobalVariable.sampleAUTWebFormPage)
+
+WebUI.back()
 
 WebUI.verifyEqual(WebUI.getUrl(), GlobalVariable.sampeAUTIndexPage)
+
+WebUI.forward()
+
+WebUI.verifyEqual(WebUI.getUrl(), GlobalVariable.sampleAUTWebFormPage)
+

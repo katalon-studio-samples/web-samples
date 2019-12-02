@@ -23,7 +23,7 @@ WebUI.openBrowser(GlobalVariable.sampleAUTOpenNewWindowPage)
 
 WebUI.setText(findTestObject('Object Repository/Page_Demo AUT/input_Open New Window_window-title'), 'www.google.com')
 
-// Click to open new window
+'Click to open new window'
 WebUI.click(findTestObject('Object Repository/Page_Demo AUT/button_Open New Window'))
 
 WebUI.verifyEqual(DriverFactory.getWebDriver().getWindowHandles().size(), 2)

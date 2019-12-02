@@ -15,6 +15,10 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.navigateToUrl(GlobalVariable.sampeAUTIndexPage)
+def draggableBox = findTestObject('Object Repository/Page_Demo AUT/div_Drag me')
 
-WebUI.verifyEqual(WebUI.getUrl(), GlobalVariable.sampeAUTIndexPage)
+def droppableBox = findTestObject('Object Repository/Page_Demo AUT/div_Drag me_droppable')
+
+WebUI.openBrowser(GlobalVariable.sampleAUTDragDropPage)
+
+WebUI.dragAndDropToObject(draggableBox, droppableBox)
