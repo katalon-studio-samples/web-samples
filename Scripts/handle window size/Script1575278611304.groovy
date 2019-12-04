@@ -17,19 +17,25 @@ import internal.GlobalVariable as GlobalVariable
 
 import com.kms.katalon.core.webui.driver.DriverFactory
 
-import org.openqa.selenium.Keys as Keys
+import org.openqa.selenium.Dimension
 
-WebUI.openBrowser(GlobalVariable.sampleAUTOpenNewWindowPage)
+import org.openqa.selenium.Point
 
-WebUI.setText(findTestObject('Object Repository/Page_Demo AUT/input_Open New Window_window-title'), 'www.google.com')
+WebUI.openBrowser(GlobalVariable.sampeAUTIndexPage)
 
-'Click to open new window'
-WebUI.click(findTestObject('Object Repository/Page_Demo AUT/button_Open New Window'))
+Dimension initialSize = new Dimension(600, 600)
 
-'Verify that there are 2 opened windows'
-WebUI.verifyEqual(DriverFactory.getWebDriver().getWindowHandles().size(), 2)
+'Set initial size for window'
+WebUI.setViewPortSize(initialSize.width, initialSize.height)
 
-'Close the second window by URL'
-WebUI.closeWindowUrl(GlobalVariable.sampleAUTOpenNewWindowPage + "?title=www.google.com")
+Dimension currentSize = DriverFactory.getWebDriver().manage().window().getSize()
 
-WebUI.verifyEqual(DriverFactory.getWebDriver().getWindowHandles().size(), 1)
+WebUI.verifyEqual(currentSize, initialSize)
+
+WebUI.maximizeWindow()
+
+currentSize = DriverFactory.getWebDriver().manage().window().getSize()
+
+WebUI.verifyGreaterThan(currentSize.width, initialSize.width)
+
+WebUI.verifyGreaterThan(currentSize.height, initialSize.height)

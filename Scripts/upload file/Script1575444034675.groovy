@@ -3,6 +3,9 @@ import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
+
+import org.junit.After
+
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
@@ -15,21 +18,21 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
-import com.kms.katalon.core.webui.driver.DriverFactory
+import com.kms.katalon.core.configuration.RunConfiguration
 
-import org.openqa.selenium.Keys as Keys
+import com.kms.katalon.core.webui.common.WebUiCommonHelper
 
-WebUI.openBrowser(GlobalVariable.sampleAUTOpenNewWindowPage)
+WebUI.openBrowser(GlobalVariable.sampleAUTFileUploadPage)
 
-WebUI.setText(findTestObject('Object Repository/Page_Demo AUT/input_Open New Window_window-title'), 'www.google.com')
+def uploadedFileName = "sample-text-file.txt"
 
-'Click to open new window'
-WebUI.click(findTestObject('Object Repository/Page_Demo AUT/button_Open New Window'))
+def fileUploadInput = findTestObject('Object Repository/Page_Demo AUT/input_Capture object_file-upload')
 
-'Verify that there are 2 opened windows'
-WebUI.verifyEqual(DriverFactory.getWebDriver().getWindowHandles().size(), 2)
+String uploadedFilePath = RunConfiguration.getProjectDir() + File.separator + "Sample Files" + File.separator + uploadedFileName
 
-'Close the second window by URL'
-WebUI.closeWindowUrl(GlobalVariable.sampleAUTOpenNewWindowPage + "?title=www.google.com")
+WebUI.verifyTextNotPresent(uploadedFileName, false)
 
-WebUI.verifyEqual(DriverFactory.getWebDriver().getWindowHandles().size(), 1)
+WebUI.uploadFile(fileUploadInput, uploadedFilePath)
+
+'Verify the name of the uploaded file show up on page (this only occurs if we have uploaded a file)'
+WebUI.verifyTextPresent(uploadedFileName, false)

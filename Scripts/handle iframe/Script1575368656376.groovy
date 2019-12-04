@@ -15,21 +15,30 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
+import com.kms.katalon.core.webui.common.WebUiCommonHelper
+
 import com.kms.katalon.core.webui.driver.DriverFactory
+import org.openqa.selenium.WebElement 
 
-import org.openqa.selenium.Keys as Keys
+WebUI.openBrowser(GlobalVariable.sampleAUTIframePage)
 
-WebUI.openBrowser(GlobalVariable.sampleAUTOpenNewWindowPage)
+def iframe = findTestObject('Object Repository/Page_Demo AUT/iframe_nested') 
 
-WebUI.setText(findTestObject('Object Repository/Page_Demo AUT/input_Open New Window_window-title'), 'www.google.com')
+def inputInsideIframe = findTestObject('Object Repository/Page_Demo AUT/input_First name_firstName_iframe')
 
-'Click to open new window'
-WebUI.click(findTestObject('Object Repository/Page_Demo AUT/button_Open New Window'))
+def inputLocator = WebUiCommonHelper.buildLocator(inputInsideIframe)
 
-'Verify that there are 2 opened windows'
-WebUI.verifyEqual(DriverFactory.getWebDriver().getWindowHandles().size(), 2)
+WebUI.switchToFrame(iframe, GlobalVariable.defaultTimeout)
 
-'Close the second window by URL'
-WebUI.closeWindowUrl(GlobalVariable.sampleAUTOpenNewWindowPage + "?title=www.google.com")
+List<WebElement> foundElements = DriverFactory.getWebDriver().findElements(inputLocator)
 
-WebUI.verifyEqual(DriverFactory.getWebDriver().getWindowHandles().size(), 1)
+'Verify that the input inside iframe can be found because we have switched to the iframe context'
+WebUI.verifyEqual(foundElements.size(), 1)
+
+WebUI.switchToDefaultContent()
+
+foundElements = DriverFactory.getWebDriver().findElements(inputLocator)
+
+'Verify that the input element inside iframe cannot be found because we have switched to default content'
+WebUI.verifyEqual(foundElements.size(), 0)
+

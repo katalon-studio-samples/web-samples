@@ -3,6 +3,9 @@ import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
+
+import org.junit.After
+
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
@@ -15,21 +18,15 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
-import com.kms.katalon.core.webui.driver.DriverFactory
+WebUI.openBrowser(GlobalVariable.sampleAUTWebFormPage)
 
-import org.openqa.selenium.Keys as Keys
+def rawText = "John"
 
-WebUI.openBrowser(GlobalVariable.sampleAUTOpenNewWindowPage)
+'Encrypted text for rawText value'
+def encryptedText = "sY0Lk5WfjiQ="
 
-WebUI.setText(findTestObject('Object Repository/Page_Demo AUT/input_Open New Window_window-title'), 'www.google.com')
+def firstnameInput = findTestObject('Object Repository/Page_Demo AUT/input_First name_firstName')
 
-'Click to open new window'
-WebUI.click(findTestObject('Object Repository/Page_Demo AUT/button_Open New Window'))
+WebUI.setEncryptedText(firstnameInput, encryptedText)
 
-'Verify that there are 2 opened windows'
-WebUI.verifyEqual(DriverFactory.getWebDriver().getWindowHandles().size(), 2)
-
-'Close the second window by URL'
-WebUI.closeWindowUrl(GlobalVariable.sampleAUTOpenNewWindowPage + "?title=www.google.com")
-
-WebUI.verifyEqual(DriverFactory.getWebDriver().getWindowHandles().size(), 1)
+WebUI.verifyElementAttributeValue(firstnameInput, "value", rawText, GlobalVariable.defaultTimeout)

@@ -15,21 +15,24 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
-import com.kms.katalon.core.webui.driver.DriverFactory
+WebUI.openBrowser(GlobalVariable.sampleAUTHoverPage)
 
-import org.openqa.selenium.Keys as Keys
+WebUI.verifyTextNotPresent("The div is hovered!", false)
 
-WebUI.openBrowser(GlobalVariable.sampleAUTOpenNewWindowPage)
+def hoverableObject = findTestObject('Object Repository/Page_Demo AUT/div_Hover me')
 
-WebUI.setText(findTestObject('Object Repository/Page_Demo AUT/input_Open New Window_window-title'), 'www.google.com')
+WebUI.mouseOver(hoverableObject)
 
-'Click to open new window'
-WebUI.click(findTestObject('Object Repository/Page_Demo AUT/button_Open New Window'))
+'Verify a text is present as a result of hovering over the element'
+WebUI.verifyTextPresent("The div is hovered!", false)
 
-'Verify that there are 2 opened windows'
-WebUI.verifyEqual(DriverFactory.getWebDriver().getWindowHandles().size(), 2)
+WebUI.mouseOverOffset(hoverableObject, 20, 20)
 
-'Close the second window by URL'
-WebUI.closeWindowUrl(GlobalVariable.sampleAUTOpenNewWindowPage + "?title=www.google.com")
+'Verify a text is present as a result of hovering over the element with a relative position'
+WebUI.verifyTextPresent("The div is hovered!", false)
 
-WebUI.verifyEqual(DriverFactory.getWebDriver().getWindowHandles().size(), 1)
+'Move the mouse over the element with a relative position that is outside the element'
+WebUI.mouseOverOffset(hoverableObject, 300, 300)
+
+'Verify the text is not present because the mouse is outside the element'
+WebUI.verifyTextNotPresent("The div is hovered!", false)

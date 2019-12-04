@@ -15,21 +15,26 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
-import com.kms.katalon.core.webui.driver.DriverFactory
+WebUI.openBrowser(GlobalVariable.sampleAUTConfirmPage)
 
-import org.openqa.selenium.Keys as Keys
+button = findTestObject('Object Repository/Page_Demo AUT/button_Click me_confirm')
 
-WebUI.openBrowser(GlobalVariable.sampleAUTOpenNewWindowPage)
+'Click the button to show the confirm dialog'
+WebUI.click(button)
 
-WebUI.setText(findTestObject('Object Repository/Page_Demo AUT/input_Open New Window_window-title'), 'www.google.com')
+WebUI.verifyAlertPresent(GlobalVariable.defaultTimeout)
 
-'Click to open new window'
-WebUI.click(findTestObject('Object Repository/Page_Demo AUT/button_Open New Window'))
+WebUI.verifyEqual(WebUI.getAlertText(), "This is a confirm box")
 
-'Verify that there are 2 opened windows'
-WebUI.verifyEqual(DriverFactory.getWebDriver().getWindowHandles().size(), 2)
+WebUI.acceptAlert()
 
-'Close the second window by URL'
-WebUI.closeWindowUrl(GlobalVariable.sampleAUTOpenNewWindowPage + "?title=www.google.com")
+WebUI.verifyAlertNotPresent(GlobalVariable.defaultTimeout)
 
-WebUI.verifyEqual(DriverFactory.getWebDriver().getWindowHandles().size(), 1)
+'Click the button to show the confirm box dialog'
+WebUI.click(button)
+
+WebUI.verifyAlertPresent(GlobalVariable.defaultTimeout)
+
+WebUI.dismissAlert()
+
+WebUI.verifyAlertNotPresent(GlobalVariable.defaultTimeout)

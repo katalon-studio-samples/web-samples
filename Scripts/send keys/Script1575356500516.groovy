@@ -15,21 +15,12 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
-import com.kms.katalon.core.webui.driver.DriverFactory
-
 import org.openqa.selenium.Keys as Keys
 
-WebUI.openBrowser(GlobalVariable.sampleAUTOpenNewWindowPage)
+WebUI.openBrowser(GlobalVariable.sampleAUTWebFormPage)
 
-WebUI.setText(findTestObject('Object Repository/Page_Demo AUT/input_Open New Window_window-title'), 'www.google.com')
+def firstNameInput = findTestObject('Object Repository/Page_Demo AUT/input_First name_firstName')
 
-'Click to open new window'
-WebUI.click(findTestObject('Object Repository/Page_Demo AUT/button_Open New Window'))
+WebUI.sendKeys(firstNameInput, Keys.chord('J', 'o', 'h', 'n', Keys.SPACE, 'D', 'o', 'e'))
 
-'Verify that there are 2 opened windows'
-WebUI.verifyEqual(DriverFactory.getWebDriver().getWindowHandles().size(), 2)
-
-'Close the second window by URL'
-WebUI.closeWindowUrl(GlobalVariable.sampleAUTOpenNewWindowPage + "?title=www.google.com")
-
-WebUI.verifyEqual(DriverFactory.getWebDriver().getWindowHandles().size(), 1)
+WebUI.verifyElementAttributeValue(firstNameInput, "value", "John Doe", GlobalVariable.defaultTimeout)

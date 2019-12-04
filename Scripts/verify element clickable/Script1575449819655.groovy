@@ -14,22 +14,20 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
+import org.openqa.selenium.WebElement
 
-import com.kms.katalon.core.webui.driver.DriverFactory
+import com.kms.katalon.core.webui.common.WebUiCommonHelper
 
-import org.openqa.selenium.Keys as Keys
+WebUI.openBrowser(GlobalVariable.sampleAUTClickPage)
 
-WebUI.openBrowser(GlobalVariable.sampleAUTOpenNewWindowPage)
+def clickButton = findTestObject('Object Repository/Page_Demo AUT/button_Click me_click page')
 
-WebUI.setText(findTestObject('Object Repository/Page_Demo AUT/input_Open New Window_window-title'), 'www.google.com')
+WebUI.verifyElementClickable(clickButton)
 
-'Click to open new window'
-WebUI.click(findTestObject('Object Repository/Page_Demo AUT/button_Open New Window'))
+'Get the corresponding Selenium WebElement of clickButton'
+WebElement buttonElement = WebUiCommonHelper.findWebElement(clickButton, GlobalVariable.defaultTimeout)
 
-'Verify that there are 2 opened windows'
-WebUI.verifyEqual(DriverFactory.getWebDriver().getWindowHandles().size(), 2)
+'Disable the button so that it is not clickable'
+WebUI.executeJavaScript("arguments[0].disabled = true", Arrays.asList(buttonElement))
 
-'Close the second window by URL'
-WebUI.closeWindowUrl(GlobalVariable.sampleAUTOpenNewWindowPage + "?title=www.google.com")
-
-WebUI.verifyEqual(DriverFactory.getWebDriver().getWindowHandles().size(), 1)
+WebUI.verifyElementNotClickable(clickButton)

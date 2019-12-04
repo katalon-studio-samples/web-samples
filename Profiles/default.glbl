@@ -64,4 +64,34 @@
       <initValue>'https://katalon-test.s3.amazonaws.com/aut/html/link.html'</initValue>
       <name>sampleAUTLinkPage</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://katalon-test.s3.amazonaws.com/aut/html/element-rect.html'</initValue>
+      <name>sampleAUTElementRectPage</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://katalon-test.s3.amazonaws.com/aut/html/hover.html'</initValue>
+      <name>sampleAUTHoverPage</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://katalon-test.s3.amazonaws.com/aut/html/refresh.html'</initValue>
+      <name>sampleAUTRefreshPage</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://katalon-test.s3.amazonaws.com/aut/html/click.html'</initValue>
+      <name>sampleAUTClickPage</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://katalon-test.s3.amazonaws.com/aut/html/iframe.html'</initValue>
+      <name>sampleAUTIframePage</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://katalon-test.s3.amazonaws.com/aut/html/file-upload.html'</initValue>
+      <name>sampleAUTFileUploadPage</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

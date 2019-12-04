@@ -20,6 +20,7 @@ WebUI.openBrowser(GlobalVariable.sampeAUTIndexPage)
 
 def webFormLink = findTestObject('Object Repository/Page_Demo AUT/a_Web Form')
 
+'Click to open web form page'
 WebUI.click(webFormLink)
 
 WebUI.verifyEqual(WebUI.getUrl(), GlobalVariable.sampleAUTWebFormPage)

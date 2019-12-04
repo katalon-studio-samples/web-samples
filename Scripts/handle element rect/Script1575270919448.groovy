@@ -15,21 +15,19 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
-import com.kms.katalon.core.webui.driver.DriverFactory
+WebUI.openBrowser(GlobalVariable.sampleAUTElementRectPage)
 
-import org.openqa.selenium.Keys as Keys
+'Find the only div in the page which has width: 200px, height: 100px, left: 100px, top: 200px'
+def element = findTestObject('Object Repository/Page_Demo AUT/div_This is a div with width 200px height 100px left 100px top 200px') 
 
-WebUI.openBrowser(GlobalVariable.sampleAUTOpenNewWindowPage)
+def elementWidth = WebUI.getElementWidth(element)
 
-WebUI.setText(findTestObject('Object Repository/Page_Demo AUT/input_Open New Window_window-title'), 'www.google.com')
+WebUI.verifyEqual(elementWidth, 200)
 
-'Click to open new window'
-WebUI.click(findTestObject('Object Repository/Page_Demo AUT/button_Open New Window'))
+def elementHeight = WebUI.getElementHeight(element)
 
-'Verify that there are 2 opened windows'
-WebUI.verifyEqual(DriverFactory.getWebDriver().getWindowHandles().size(), 2)
+WebUI.verifyEqual(elementHeight, 100)
 
-'Close the second window by URL'
-WebUI.closeWindowUrl(GlobalVariable.sampleAUTOpenNewWindowPage + "?title=www.google.com")
+def elementLeftPosition = WebUI.getElementLeftPosition(element)
 
-WebUI.verifyEqual(DriverFactory.getWebDriver().getWindowHandles().size(), 1)
+WebUI.verifyEqual(elementLeftPosition, 100)

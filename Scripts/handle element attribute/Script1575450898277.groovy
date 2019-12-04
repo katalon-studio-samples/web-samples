@@ -15,21 +15,29 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
-import com.kms.katalon.core.webui.driver.DriverFactory
+WebUI.openBrowser(GlobalVariable.sampleAUTWebFormPage)
 
-import org.openqa.selenium.Keys as Keys
+def input = findTestObject('Object Repository/Page_Demo AUT/input_First name_firstName')
 
-WebUI.openBrowser(GlobalVariable.sampleAUTOpenNewWindowPage)
+WebUI.verifyElementHasAttribute(input, "id", GlobalVariable.defaultTimeout)
 
-WebUI.setText(findTestObject('Object Repository/Page_Demo AUT/input_Open New Window_window-title'), 'www.google.com')
+WebUI.verifyEqual(WebUI.getAttribute(input, "id"), "first-name")
 
-'Click to open new window'
-WebUI.click(findTestObject('Object Repository/Page_Demo AUT/button_Open New Window'))
+def verifyIdAttributeResult = WebUI.verifyElementAttributeValue(input, "id", "first-name", GlobalVariable.defaultTimeout)
 
-'Verify that there are 2 opened windows'
-WebUI.verifyEqual(DriverFactory.getWebDriver().getWindowHandles().size(), 2)
+WebUI.verifyEqual(verifyIdAttributeResult, true)
 
-'Close the second window by URL'
-WebUI.closeWindowUrl(GlobalVariable.sampleAUTOpenNewWindowPage + "?title=www.google.com")
+verifyIdAttributeResult = WebUI.verifyElementAttributeValue(input, "id", "incorrect-id", GlobalVariable.defaultTimeout, FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyEqual(DriverFactory.getWebDriver().getWindowHandles().size(), 1)
+WebUI.verifyEqual(verifyIdAttributeResult, false)
+
+WebUI.verifyElementNotHasAttribute(input, "href", GlobalVariable.defaultTimeout)
+
+WebUI.verifyEqual(WebUI.getAttribute(input, "href"), null)
+
+boolean verifyHrefAttributeResult = WebUI.verifyElementAttributeValue(input, "href", "whatever", GlobalVariable.defaultTimeout, FailureHandling.CONTINUE_ON_FAILURE)
+
+'Verify the value of an unavailable attribute will always return false'
+WebUI.verifyEqual(verifyHrefAttributeResult, false)
+
+

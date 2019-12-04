@@ -15,12 +15,11 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
-// Alert
 WebUI.openBrowser(GlobalVariable.sampleAUTAlertPage)
 
 def button = findTestObject('Object Repository/Page_Demo AUT/button_Click me_alert')
 
-'Click the button to show the alert box'
+'Click the button to show the alert dialog'
 WebUI.click(button)
 
 WebUI.verifyAlertPresent(GlobalVariable.defaultTimeout)
@@ -31,57 +30,7 @@ WebUI.acceptAlert()
 
 WebUI.verifyAlertNotPresent(GlobalVariable.defaultTimeout)
 
-'Click the button to show the alert box again'
-WebUI.click(button)
-
-WebUI.verifyAlertPresent(GlobalVariable.defaultTimeout)
-
-WebUI.dismissAlert()
-
-WebUI.verifyAlertNotPresent(GlobalVariable.defaultTimeout)
-
-// Prompt
-WebUI.navigateToUrl(GlobalVariable.sampleAUTPromptPage)
-
-button = findTestObject('Object Repository/Page_Demo AUT/button_Click me')
-
-'Click the button to show the prompt box'
-WebUI.click(button)
-
-WebUI.verifyAlertPresent(GlobalVariable.defaultTimeout)
-
-WebUI.verifyEqual(WebUI.getAlertText(), "Please enter your name")
-
-WebUI.acceptAlert()
-
-WebUI.verifyAlertNotPresent(GlobalVariable.defaultTimeout)
-
-'Click the button to show the prompt box again'
-WebUI.click(button)
-
-WebUI.verifyAlertPresent(GlobalVariable.defaultTimeout)
-
-WebUI.dismissAlert()
-
-WebUI.verifyAlertNotPresent(GlobalVariable.defaultTimeout)
-
-// Confirm
-WebUI.navigateToUrl(GlobalVariable.sampleAUTConfirmPage)
-
-button = findTestObject('Object Repository/Page_Demo AUT/button_Click me_confirm')
-
-'Click the button to show the confirm box'
-WebUI.click(button)
-
-WebUI.verifyAlertPresent(GlobalVariable.defaultTimeout)
-
-WebUI.verifyEqual(WebUI.getAlertText(), "This is a confirm box")
-
-WebUI.acceptAlert()
-
-WebUI.verifyAlertNotPresent(GlobalVariable.defaultTimeout)
-
-'Click the button to show the confirm box again'
+'Click the button to show the alert dialog again'
 WebUI.click(button)
 
 WebUI.verifyAlertPresent(GlobalVariable.defaultTimeout)

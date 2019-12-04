@@ -19,18 +19,23 @@ def button = findTestObject('Object Repository/Page_Demo AUT/button_Click me')
 
 WebUI.openBrowser(GlobalVariable.sampleAUTPromptPage)
 
-'Click the button to show the alert'
+def name = "John"
+
+'Click the button to show the prompt dialog which asks for user\'s name input'
 WebUI.click(button)
 
 WebUI.verifyAlertPresent(GlobalVariable.defaultTimeout)
 
-WebUI.verifyEqual(WebUI.getAlertText(), "Please enter your name")
+WebUI.setAlertText(name)
 
 WebUI.acceptAlert()
 
+'Verify a greeting shows up as a result of inputting name to the prompt dialog and clicking OK'
+WebUI.verifyTextPresent("Hello " + name, false)
+
 WebUI.verifyAlertNotPresent(GlobalVariable.defaultTimeout)
 
-'Click the button to show the alert again'
+'Click the button to show the prompt dialog again'
 WebUI.click(button)
 
 WebUI.verifyAlertPresent(GlobalVariable.defaultTimeout)

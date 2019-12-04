@@ -15,21 +15,17 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
-import com.kms.katalon.core.webui.driver.DriverFactory
+import com.kms.katalon.core.configuration.RunConfiguration
+import  com.kms.katalon.core.webui.common.ScreenUtil
 
-import org.openqa.selenium.Keys as Keys
+def screenshotFileName = RunConfiguration.getLogFolderPath() + File.separator + System.currentTimeMillis() + ".png"
 
-WebUI.openBrowser(GlobalVariable.sampleAUTOpenNewWindowPage)
+def screenshotFile = new File(screenshotFileName)
 
-WebUI.setText(findTestObject('Object Repository/Page_Demo AUT/input_Open New Window_window-title'), 'www.google.com')
+screenshotFile.createNewFile()
 
-'Click to open new window'
-WebUI.click(findTestObject('Object Repository/Page_Demo AUT/button_Open New Window'))
+WebUI.openBrowser(GlobalVariable.sampeAUTIndexPage)
 
-'Verify that there are 2 opened windows'
-WebUI.verifyEqual(DriverFactory.getWebDriver().getWindowHandles().size(), 2)
+WebUI.maximizeWindow()
 
-'Close the second window by URL'
-WebUI.closeWindowUrl(GlobalVariable.sampleAUTOpenNewWindowPage + "?title=www.google.com")
-
-WebUI.verifyEqual(DriverFactory.getWebDriver().getWindowHandles().size(), 1)
+WebUI.takeScreenshot(screenshotFileName)

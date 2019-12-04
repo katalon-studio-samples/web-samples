@@ -20,6 +20,8 @@ WebUI.openBrowser(GlobalVariable.sampleAUTWebFormPage)
 
 def multiselectBox = findTestObject('Object Repository/Page_Demo AUT/select_High salaryNice managerleaderExcelle_8daca8')
 
+WebUI.verifyEqual(WebUI.getNumberOfTotalOption(multiselectBox), 6)
+
 WebUI.selectAllOption(multiselectBox)
 
 'Verify that all 6 options in the select element have been selected'

@@ -18,7 +18,7 @@ import internal.GlobalVariable as GlobalVariable
 import org.apache.commons.lang3.SystemUtils
 
 if (SystemUtils.IS_OS_WINDOWS) {
-    WebUI.openBrowser("")
+    WebUI.openBrowser(GlobalVariable.basicAuthAUT)
     
     WebUI.authenticate(GlobalVariable.basicAuthAUT, "admin", "admin", GlobalVariable.defaultTimeout)
     

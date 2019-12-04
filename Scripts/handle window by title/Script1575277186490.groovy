@@ -26,10 +26,17 @@ WebUI.setText(findTestObject('Object Repository/Page_Demo AUT/input_Open New Win
 'Click to open new window'
 WebUI.click(findTestObject('Object Repository/Page_Demo AUT/button_Open New Window'))
 
+WebUI.verifyEqual(WebUI.getWindowTitle(), "Demo AUT")
+
+'Switch to the newly opened window by title'
+WebUI.switchToWindowTitle("www.google.com")
+
+WebUI.verifyEqual(WebUI.getWindowTitle(), "www.google.com")
+
 'Verify that there are 2 opened windows'
 WebUI.verifyEqual(DriverFactory.getWebDriver().getWindowHandles().size(), 2)
 
-'Close the second window by URL'
-WebUI.closeWindowUrl(GlobalVariable.sampleAUTOpenNewWindowPage + "?title=www.google.com")
+'Close the first window by title'
+WebUI.closeWindowTitle("Demo AUT")
 
 WebUI.verifyEqual(DriverFactory.getWebDriver().getWindowHandles().size(), 1)

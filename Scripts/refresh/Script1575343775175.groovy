@@ -15,21 +15,11 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
-import com.kms.katalon.core.webui.driver.DriverFactory
+WebUI.openBrowser(GlobalVariable.sampleAUTRefreshPage)
 
-import org.openqa.selenium.Keys as Keys
+WebUI.verifyTextNotPresent("You have refreshed the page!", false)
 
-WebUI.openBrowser(GlobalVariable.sampleAUTOpenNewWindowPage)
+WebUI.refresh()
 
-WebUI.setText(findTestObject('Object Repository/Page_Demo AUT/input_Open New Window_window-title'), 'www.google.com')
-
-'Click to open new window'
-WebUI.click(findTestObject('Object Repository/Page_Demo AUT/button_Open New Window'))
-
-'Verify that there are 2 opened windows'
-WebUI.verifyEqual(DriverFactory.getWebDriver().getWindowHandles().size(), 2)
-
-'Close the second window by URL'
-WebUI.closeWindowUrl(GlobalVariable.sampleAUTOpenNewWindowPage + "?title=www.google.com")
-
-WebUI.verifyEqual(DriverFactory.getWebDriver().getWindowHandles().size(), 1)
+'Verify a text show up as a result of refreshing the page'
+WebUI.verifyTextPresent("You have refreshed the page!", false)
