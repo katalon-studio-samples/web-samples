@@ -14,16 +14,17 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
-import org.openqa.selenium.WebElement
+import org.openqa.selenium.Keys as Keys
 
-import com.kms.katalon.core.webui.common.WebUiCommonHelper
+WebUI.openBrowser(GlobalVariable.sampleAngularJsAUT)
 
-WebUI.openBrowser(GlobalVariable.sampleAUTClickPage)
+WebUI.setText(findTestObject('Object Repository/Page_Super Calculator/input_Super Calculator_input-small ng-prist_22e063'), 
+    '123')
 
-WebElement button = WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Page_Demo AUT/button_Click me_click page'), GlobalVariable.defaultTimeout)
+WebUI.sendKeys(findTestObject('Object Repository/Page_Super Calculator/input_Super Calculator_input-small ng-prist_22e063'), 
+    Keys.chord(Keys.ENTER))
 
-WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(button))
+WebUI.waitForAngularLoad(30)
 
-'Verify text present as the result of button click'
-WebUI.verifyTextPresent("You have clicked the button!", false)
+WebUI.click(findTestObject('Object Repository/Page_Super Calculator/td_23553 PM'))
 

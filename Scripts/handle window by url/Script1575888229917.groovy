@@ -14,16 +14,27 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
-import org.openqa.selenium.WebElement
 
-import com.kms.katalon.core.webui.common.WebUiCommonHelper
+import com.kms.katalon.core.webui.driver.DriverFactory
 
-WebUI.openBrowser(GlobalVariable.sampleAUTClickPage)
+import org.openqa.selenium.Keys as Keys
 
-WebElement button = WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Page_Demo AUT/button_Click me_click page'), GlobalVariable.defaultTimeout)
+WebUI.openBrowser(GlobalVariable.sampleAUTOpenNewWindowPage)
 
-WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(button))
+WebUI.setText(findTestObject('Object Repository/Page_Demo AUT/input_Open New Window_window-title'), 'www.google.com')
 
-'Verify text present as the result of button click'
-WebUI.verifyTextPresent("You have clicked the button!", false)
+'Click to open new window'
+WebUI.click(findTestObject('Object Repository/Page_Demo AUT/button_Open New Window'))
 
+'Switch to second window by URL'
+WebUI.switchToWindowUrl(GlobalVariable.sampleAUTOpenNewWindowPage + "?title=www.google.com")
+
+WebUI.verifyEqual(WebUI.getUrl(), GlobalVariable.sampleAUTOpenNewWindowPage + "?title=www.google.com")
+
+'Verify that there are 2 opened windows'
+WebUI.verifyEqual(DriverFactory.getWebDriver().getWindowHandles().size(), 2)
+
+'Close the second window by URL'
+WebUI.closeWindowUrl(GlobalVariable.sampleAUTOpenNewWindowPage + "?title=www.google.com")
+
+WebUI.verifyEqual(DriverFactory.getWebDriver().getWindowHandles().size(), 1)

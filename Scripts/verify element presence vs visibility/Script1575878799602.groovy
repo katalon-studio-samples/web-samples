@@ -18,12 +18,32 @@ import org.openqa.selenium.WebElement
 
 import com.kms.katalon.core.webui.common.WebUiCommonHelper
 
-WebUI.openBrowser(GlobalVariable.sampleAUTClickPage)
+WebUI.openBrowser(GlobalVariable.sampleAUTWebFormPage)
 
-WebElement button = WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Page_Demo AUT/button_Click me_click page'), GlobalVariable.defaultTimeout)
+def firstNameInput = findTestObject('Object Repository/Page_Demo AUT/input_First name_firstName')
 
-WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(button))
+WebUI.verifyElementPresent(firstNameInput, GlobalVariable.defaultTimeout)
 
-'Verify text present as the result of button click'
-WebUI.verifyTextPresent("You have clicked the button!", false)
+WebUI.verifyElementVisible(firstNameInput)
 
+'Get the corresponding Selenium WebElement of firstNameInput'
+WebElement inputElement = WebUiCommonHelper.findWebElement(firstNameInput, GlobalVariable.defaultTimeout)
+
+'Hide the inpute element by setting css property display to "none"'
+WebUI.executeJavaScript("arguments[0].style.display = 'none'", Arrays.asList(inputElement))
+
+WebUI.verifyElementPresent(firstNameInput, GlobalVariable.defaultTimeout)
+
+WebUI.verifyElementNotVisible(firstNameInput)
+
+'Reset the value of display property'
+WebUI.executeJavaScript("arguments[0].style.display = 'block'", Arrays.asList(inputElement))
+
+WebUI.verifyElementVisible(firstNameInput)
+
+'Hide the input element again by setting css property visibility to "hidden"'
+WebUI.executeJavaScript("arguments[0].style.visibility = 'hidden'", Arrays.asList(inputElement))
+
+WebUI.verifyElementPresent(firstNameInput, GlobalVariable.defaultTimeout)
+
+WebUI.verifyElementNotVisible(firstNameInput)

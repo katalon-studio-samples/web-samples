@@ -24,7 +24,7 @@ WebUI.click(button)
 
 WebUI.verifyAlertPresent(GlobalVariable.defaultTimeout)
 
-WebUI.verifyEqual(WebUI.getAlertText(), "This is an alert box")
+WebUI.verifyEqual(WebUI.getAlertText(), "This is an alert box.")
 
 WebUI.acceptAlert()
 
@@ -38,3 +38,14 @@ WebUI.verifyAlertPresent(GlobalVariable.defaultTimeout)
 WebUI.dismissAlert()
 
 WebUI.verifyAlertNotPresent(GlobalVariable.defaultTimeout)
+
+def delayAlertButton = findTestObject('Object Repository/Page_Demo AUT/button_Click to show alert after 10 seconds')
+
+'Click the button to show the alert dialog after 10 seconds'
+WebUI.click(delayAlertButton)
+
+WebUI.verifyAlertNotPresent(1)
+
+WebUI.waitForAlert(10)
+
+WebUI.verifyAlertPresent(1)

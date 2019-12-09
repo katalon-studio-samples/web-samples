@@ -14,16 +14,30 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
-import org.openqa.selenium.WebElement
 
-import com.kms.katalon.core.webui.common.WebUiCommonHelper
+WebUI.openBrowser(GlobalVariable.sampleAUTWebFormPage)
 
-WebUI.openBrowser(GlobalVariable.sampleAUTClickPage)
+def input = findTestObject('Object Repository/Page_Demo AUT/input_First name_firstName')
 
-WebElement button = WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Page_Demo AUT/button_Click me_click page'), GlobalVariable.defaultTimeout)
+WebUI.verifyElementHasAttribute(input, "id", GlobalVariable.defaultTimeout)
 
-WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(button))
+WebUI.verifyEqual(WebUI.getAttribute(input, "id"), "first-name")
 
-'Verify text present as the result of button click'
-WebUI.verifyTextPresent("You have clicked the button!", false)
+def verifyIdAttributeResult = WebUI.verifyElementAttributeValue(input, "id", "first-name", GlobalVariable.defaultTimeout)
+
+WebUI.verifyEqual(verifyIdAttributeResult, true)
+
+def verifyIncorrectIdAttributeResult = WebUI.verifyElementAttributeValue(input, "id", "incorrect-id", GlobalVariable.defaultTimeout, FailureHandling.OPTIONAL)
+
+WebUI.verifyEqual(verifyIncorrectIdAttributeResult, false)
+
+WebUI.verifyElementNotHasAttribute(input, "href", GlobalVariable.defaultTimeout)
+
+WebUI.verifyEqual(WebUI.getAttribute(input, "href"), null)
+
+boolean verifyHrefAttributeResult = WebUI.verifyElementAttributeValue(input, "href", "whatever", GlobalVariable.defaultTimeout, FailureHandling.OPTIONAL)
+
+'Verifying the value of an unavailable attribute will always return false'
+WebUI.verifyEqual(verifyHrefAttributeResult, false)
+
 

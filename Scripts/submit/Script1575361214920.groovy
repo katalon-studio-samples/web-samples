@@ -41,7 +41,7 @@ WebUI.selectOptionByValue(findTestObject('Page_Demo AUT/select_High salaryNice m
 
 WebUI.click(findTestObject('Object Repository/Page_Demo AUT/input'))
 
-WebUI.click(findTestObject('Page_Demo AUT/button_Submit'))
+WebUI.submit(findTestObject('Page_Demo AUT/button_Submit'))
 
 'Verify a text shows up as a result of submitting the form'
 WebUI.verifyTextPresent("Successfully submitted!", false)

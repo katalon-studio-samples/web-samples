@@ -14,16 +14,14 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
-import org.openqa.selenium.WebElement
 
-import com.kms.katalon.core.webui.common.WebUiCommonHelper
+WebUI.openBrowser(GlobalVariable.sampleAUTDelayPage)
 
-WebUI.openBrowser(GlobalVariable.sampleAUTClickPage)
+'This is a div which will show up in 10 seconds'
+def element = findTestObject('Object Repository/Page_Demo AUT/div_Hello World')
 
-WebElement button = WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Page_Demo AUT/button_Click me_click page'), GlobalVariable.defaultTimeout)
+WebUI.verifyElementNotPresent(element, 0)
 
-WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(button))
+WebUI.waitForElementPresent(element, 10)
 
-'Verify text present as the result of button click'
-WebUI.verifyTextPresent("You have clicked the button!", false)
-
+WebUI.verifyElementPresent(element, 0)

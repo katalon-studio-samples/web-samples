@@ -14,16 +14,18 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
-import org.openqa.selenium.WebElement
 
-import com.kms.katalon.core.webui.common.WebUiCommonHelper
+WebUI.openBrowser(GlobalVariable.sampleAUTElementAttributeChangePage)
 
-WebUI.openBrowser(GlobalVariable.sampleAUTClickPage)
+def removeImageSrcButton = findTestObject('Object Repository/Page_Demo AUT/button_Click this button to remove source of the below image after 5 seconds') 
 
-WebElement button = WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Page_Demo AUT/button_Click me_click page'), GlobalVariable.defaultTimeout)
+def image = findTestObject('Object Repository/Page_Demo AUT/img_Click this button to remove source of the below image after 5 seconds_image-with-source') 
 
-WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(button))
+'Click the button to add the "src" attribute for the image after 5 seconds'
+WebUI.click(removeImageSrcButton)
 
-'Verify text present as the result of button click'
-WebUI.verifyTextPresent("You have clicked the button!", false)
+WebUI.verifyElementHasAttribute(image, "src", 1)
 
+WebUI.waitForElementNotHasAttribute(image, "src", 5)
+
+WebUI.verifyElementNotHasAttribute(image, "src", 1)

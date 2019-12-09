@@ -3,6 +3,9 @@ import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
+
+import org.junit.After
+
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
@@ -14,16 +17,24 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
-import org.openqa.selenium.WebElement
 
 import com.kms.katalon.core.webui.common.WebUiCommonHelper
 
-WebUI.openBrowser(GlobalVariable.sampleAUTClickPage)
+WebUI.openBrowser(GlobalVariable.sampleAUTElementAttributeChangePage)
 
-WebElement button = WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Page_Demo AUT/button_Click me_click page'), GlobalVariable.defaultTimeout)
+def changeColorButton = findTestObject('Object Repository/Page_Demo AUT/button_Click this button to change its color after 5 seconds')
 
-WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(button))
+'Click the changeColorButton to change its "class" attribute value after 5 seconds'
+WebUI.click(changeColorButton)
 
-'Verify text present as the result of button click'
-WebUI.verifyTextPresent("You have clicked the button!", false)
+'Verify the value of "class" attribute before 5 seconds elapse'
+WebUI.verifyEqual(WebUI.getAttribute(changeColorButton, "class"), "btn btn-primary")
+
+WebUI.waitForElementAttributeValue(changeColorButton, "class", "btn btn-success", 5)
+
+'Verify the value of "class" attribute has been changed after waiting for 5 seconds'
+WebUI.verifyEqual(WebUI.getAttribute(changeColorButton, "class"), "btn btn-success")
+
+
+
 

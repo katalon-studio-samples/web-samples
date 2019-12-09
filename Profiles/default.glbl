@@ -94,4 +94,29 @@
       <initValue>'https://katalon-test.s3.amazonaws.com/aut/html/file-upload.html'</initValue>
       <name>sampleAUTFileUploadPage</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://katalon-test.s3.amazonaws.com/aut/html/delay.html'</initValue>
+      <name>sampleAUTDelayPage</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://katalon-test.s3.amazonaws.com/aut/html/image.html'</initValue>
+      <name>sampleAUTImagePage</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'http://protractor-demo-app.herokuapp.com/register'</initValue>
+      <name>sampleAngularAUT</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://juliemr.github.io/protractor-demo/'</initValue>
+      <name>sampleAngularJsAUT</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'http://localhost:10000/html/element-attribute-change.html'</initValue>
+      <name>sampleAUTElementAttributeChangePage</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

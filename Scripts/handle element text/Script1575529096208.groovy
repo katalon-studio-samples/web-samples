@@ -14,16 +14,11 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
-import org.openqa.selenium.WebElement
-
-import com.kms.katalon.core.webui.common.WebUiCommonHelper
 
 WebUI.openBrowser(GlobalVariable.sampleAUTClickPage)
 
-WebElement button = WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Page_Demo AUT/button_Click me_click page'), GlobalVariable.defaultTimeout)
+def button = findTestObject('Object Repository/Page_Demo AUT/button_Click me_click page')
 
-WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(button))
+WebUI.verifyElementText(button, "Click me!")
 
-'Verify text present as the result of button click'
-WebUI.verifyTextPresent("You have clicked the button!", false)
-
+WebUI.verifyEqual(WebUI.getText(button), "Click me!")

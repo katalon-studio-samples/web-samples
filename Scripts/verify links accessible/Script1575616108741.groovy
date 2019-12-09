@@ -14,16 +14,14 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
-import org.openqa.selenium.WebElement
 
-import com.kms.katalon.core.webui.common.WebUiCommonHelper
+def links = ["https://www.google.com", GlobalVariable.sampeAUTIndexPage]
 
-WebUI.openBrowser(GlobalVariable.sampleAUTClickPage)
+WebUI.verifyLinksAccessible(links)
 
-WebElement button = WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Page_Demo AUT/button_Click me_click page'), GlobalVariable.defaultTimeout)
+'Add a link which is not accessible to the list'
+links += "https://www.inaccessible-link.com"
 
-WebUI.executeJavaScript("arguments[0].click()", Arrays.asList(button))
+boolean verifyResult = WebUI.verifyLinksAccessible(links, FailureHandling.OPTIONAL)
 
-'Verify text present as the result of button click'
-WebUI.verifyTextPresent("You have clicked the button!", false)
-
+WebUI.verifyEqual(verifyResult, false)

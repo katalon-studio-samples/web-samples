@@ -22,10 +22,40 @@ def multiselectBox = findTestObject('Object Repository/Page_Demo AUT/select_High
 
 WebUI.verifyEqual(WebUI.getNumberOfTotalOption(multiselectBox), 6)
 
+WebUI.verifyOptionsPresent(multiselectBox, [
+    "High salary",
+    "Nice manager/leader",
+    "Excellent colleagues",
+    "Good teamwork",
+    "Chance to go onsite",
+    "Challenging"
+])
+
+'Verify option not present by label, without using regex'
+WebUI.verifyOptionNotPresentByLabel(multiselectBox, "Unavailable option label", false, GlobalVariable.defaultTimeout)
+
+'Verify option not present by label, using regex'
+WebUI.verifyOptionNotPresentByLabel(multiselectBox, 'Un.*$', true, GlobalVariable.defaultTimeout)
+
+'Verify option not present by value, without using regex'
+WebUI.verifyOptionNotPresentByValue(multiselectBox, "Unavailable option value", false, GlobalVariable.defaultTimeout)
+
+'Verify option not present by value, using regex'
+WebUI.verifyOptionNotPresentByValue(multiselectBox, 'Un.*$', true, GlobalVariable.defaultTimeout)
+
+'Verify that no option in the select element has been selected'
+WebUI.verifyEqual(WebUI.getNumberOfSelectedOption(multiselectBox), 0)
+
 WebUI.selectAllOption(multiselectBox)
 
 'Verify that all 6 options in the select element have been selected'
 WebUI.verifyEqual(WebUI.getNumberOfSelectedOption(multiselectBox), 6)
+
+'Verify the option with value "High salary" is present, without using regex'
+WebUI.verifyOptionPresentByValue(multiselectBox, "High salary", false, GlobalVariable.defaultTimeout)
+
+'Verify the option with value "High salary" is present, using regex'
+WebUI.verifyOptionPresentByValue(multiselectBox, 'High.*$', true, GlobalVariable.defaultTimeout)
 
 'Verify the option with value "High salary" is selected, without using regex'
 WebUI.verifyOptionSelectedByValue(multiselectBox, "High salary", false, GlobalVariable.defaultTimeout)
@@ -54,6 +84,18 @@ WebUI.verifyOptionNotSelectedByValue(multiselectBox, "Nice manager/leader", fals
 WebUI.deselectOptionByIndex(multiselectBox, "2, 3")
 
 WebUI.verifyOptionNotSelectedByIndex(multiselectBox, "2, 3", GlobalVariable.defaultTimeout)
+
+'Verify the option with label "High salary" is present, without using regex'
+WebUI.verifyOptionPresentByValue(multiselectBox, "High salary", false, GlobalVariable.defaultTimeout)
+
+'Verify the option with label "High salary" is present, using regex'
+WebUI.verifyOptionPresentByValue(multiselectBox, 'High.*$', true, GlobalVariable.defaultTimeout)
+
+'Verify the option with label "Chance to go onsite" is present, without using regex'
+WebUI.verifyOptionPresentByLabel(multiselectBox, "Chance to go onsite", false, GlobalVariable.defaultTimeout)
+
+'Verify the option with label "Chance to go onsite" is present, using regex'
+WebUI.verifyOptionPresentByValue(multiselectBox, 'Chance.*$', true, GlobalVariable.defaultTimeout)
 
 'Deselect the fifth option which has label "Chance to go onsite", without using regex'
 WebUI.deselectOptionByLabel(multiselectBox, "Chance to go onsite", false)
