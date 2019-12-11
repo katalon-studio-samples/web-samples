@@ -129,4 +129,9 @@
       <initValue>'https://katalon-test.s3.amazonaws.com/aut/html/element-visibility.html'</initValue>
       <name>sampleAUTElementVisibilityPage</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://katalon-test.s3.amazonaws.com/aut/html/jquery-async.html'</initValue>
+      <name>sampleAUTJqueryAsyncPage</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>
