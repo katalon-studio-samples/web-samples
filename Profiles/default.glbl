@@ -116,7 +116,17 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'http://localhost:10000/html/element-attribute-change.html'</initValue>
+      <initValue>'https://katalon-test.s3.amazonaws.com/aut/html/element-attribute-change.html'</initValue>
       <name>sampleAUTElementAttributeChangePage</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://katalon-test.s3.amazonaws.com/aut/html/element-clickable.html'</initValue>
+      <name>sampleAUTElementClickablePage</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://katalon-test.s3.amazonaws.com/aut/html/element-visibility.html'</initValue>
+      <name>sampleAUTElementVisibilityPage</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>

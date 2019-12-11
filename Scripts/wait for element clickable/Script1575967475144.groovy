@@ -15,8 +15,13 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.openBrowser(GlobalVariable.sampleAUTImagePage)
+'This button will become clickable in 10 seconds'
+def button = findTestObject('Object Repository/Page_Demo AUT/button_This button will be enabled in 10 seconds')
 
-def katalonLogoImage = findTestObject('Object Repository/Page_Demo AUT/katalon-logo')
+WebUI.openBrowser(GlobalVariable.sampleAUTElementClickablePage)
 
-WebUI.verifyImagePresent(katalonLogoImage)
+WebUI.verifyElementNotClickable(button)
+
+WebUI.waitForElementClickable(button, 15)
+
+WebUI.verifyElementClickable(button)

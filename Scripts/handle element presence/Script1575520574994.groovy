@@ -18,10 +18,21 @@ import internal.GlobalVariable as GlobalVariable
 WebUI.openBrowser(GlobalVariable.sampleAUTDelayPage)
 
 'This is a div which will show up in 10 seconds'
-def element = findTestObject('Object Repository/Page_Demo AUT/div_Hello World')
+def helloWorldDiv = findTestObject('Object Repository/Page_Demo AUT/div_Hello World')
 
-WebUI.verifyElementNotPresent(element, 0)
+WebUI.verifyElementNotPresent(helloWorldDiv, 1)
 
-WebUI.waitForElementPresent(element, 10)
+WebUI.waitForElementPresent(helloWorldDiv, 15)
 
-WebUI.verifyElementPresent(element, 0)
+WebUI.verifyElementPresent(helloWorldDiv, 1)
+
+WebUI.refresh()
+
+'This is a div which will disappear in 10 seconds'
+def divThatWillDisappear = findTestObject('Object Repository/Page_Demo AUT/div_This div will disappear in 10 seconds')
+
+WebUI.verifyElementPresent(divThatWillDisappear, 1)
+
+WebUI.waitForElementNotPresent(divThatWillDisappear, 15)
+
+WebUI.verifyElementNotPresent(divThatWillDisappear, 1)

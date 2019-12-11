@@ -32,7 +32,7 @@ WebUI.setEncryptedText(findTestObject('Object Repository/Page_Angular 25 User Re
 
 WebUI.click(findTestObject('Object Repository/Page_Angular 25 User Registration and Login_744ef3/button_Register'))
 
-WebUI.waitForAngularLoad(2)
+WebUI.waitForAngularLoad(5)
 
 WebUI.setText(findTestObject('Object Repository/Page_Angular Protractor Example/input_Username_username'), 'John Doe')
 
@@ -40,7 +40,7 @@ WebUI.setEncryptedText(findTestObject('Object Repository/Page_Angular Protractor
 
 WebUI.click(findTestObject('Object Repository/Page_Angular Protractor Example/button_Login'))
 
-WebUI.waitForAngularLoad(2)
+WebUI.waitForAngularLoad(5)
 
 WebUI.click(findTestObject('Object Repository/Page_Angular Protractor Example/a_Logout'))
 

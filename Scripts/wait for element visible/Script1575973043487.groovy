@@ -15,8 +15,16 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.openBrowser(GlobalVariable.sampleAUTImagePage)
+WebUI.openBrowser(GlobalVariable.sampleAUTElementVisibilityPage)
 
-def katalonLogoImage = findTestObject('Object Repository/Page_Demo AUT/katalon-logo')
+'This image will show up in 10 seconds'
+def image = findTestObject('Object Repository/Page_Demo AUT/img_Click this button to show an image after 10 seconds_will-show-up')
 
-WebUI.verifyImagePresent(katalonLogoImage)
+WebUI.verifyElementNotVisible(image)
+
+'Click the button to show the element after 10 seconds'
+WebUI.click(findTestObject('Object Repository/Page_Demo AUT/button_Click this button to show an element after 10 seconds'))
+
+WebUI.waitForElementVisible(image, 15)
+
+WebUI.verifyElementVisible(image)

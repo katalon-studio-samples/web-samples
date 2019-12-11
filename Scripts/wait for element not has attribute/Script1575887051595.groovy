@@ -26,6 +26,6 @@ WebUI.click(removeImageSrcButton)
 
 WebUI.verifyElementHasAttribute(image, "src", 1)
 
-WebUI.waitForElementNotHasAttribute(image, "src", 5)
+WebUI.waitForElementNotHasAttribute(image, "src", 10)
 
 WebUI.verifyElementNotHasAttribute(image, "src", 1)

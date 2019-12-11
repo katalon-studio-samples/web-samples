@@ -30,7 +30,7 @@ WebUI.click(changeColorButton)
 'Verify the value of "class" attribute before 5 seconds elapse'
 WebUI.verifyEqual(WebUI.getAttribute(changeColorButton, "class"), "btn btn-primary")
 
-WebUI.waitForElementAttributeValue(changeColorButton, "class", "btn btn-success", 5)
+WebUI.waitForElementAttributeValue(changeColorButton, "class", "btn btn-success", 10)
 
 'Verify the value of "class" attribute has been changed after waiting for 5 seconds'
 WebUI.verifyEqual(WebUI.getAttribute(changeColorButton, "class"), "btn btn-success")
