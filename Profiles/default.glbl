@@ -134,4 +134,9 @@
       <initValue>'https://katalon-test.s3.amazonaws.com/aut/html/jquery-async.html'</initValue>
       <name>sampleAUTJqueryAsyncPage</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'http://katalon-test.s3.amazonaws.com/aut/html/page-load.html'</initValue>
+      <name>sampleAUTPageLoadPage</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>
