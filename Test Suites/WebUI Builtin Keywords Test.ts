@@ -274,4 +274,100 @@
       <isRun>true</isRun>
       <testCaseId>Test Cases/wait for element attribute value</testCaseId>
    </testCaseLink>
+   <testCaseLink>
+      <guid>0f87466e-7797-4d58-a612-782ad78f2bfc</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/convert web element to test object</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>7660ac5e-69df-4108-a6f9-e070890a7374</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/click image</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>d22e08a8-f22c-4d5f-a355-60baab43ef2a</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/click offset</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>c130819e-efb6-4a6f-9a0c-e8f7099fa94e</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/drag and drop by offset</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>bb9b4b1c-7eda-404f-ba34-383f41dd79d7</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/drag and drop to object</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>dffd32e6-7cc9-4503-9960-767598b84361</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/get page height</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>037d48f1-d458-43ef-b6bf-45e392ded821</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/get page width</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>571b3e11-0417-44c4-8a67-8712f345bbf5</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/get viewport height</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>1c6b15b4-d3b2-41e9-8a3f-bd8719f731b3</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/get viewport width</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>b4c40cc1-9eb1-42c2-8042-be86da8fbfdb</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/get viewport top position</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>51560cc8-5f40-4b83-8012-ba667778d35f</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/get viewport left position</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>8e9ae116-1ac2-4beb-96bd-d9a0ee4548be</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/set masked text</testCaseId>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>a1bf13a2-d88d-4558-b017-1d09569415e4</variableId>
+      </variableLink>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>73ba9cc3-058f-4159-81ea-38e365f254d4</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/take screen shot</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>4ea583b2-e55d-4271-8887-a09bd4246ce8</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/type on image</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>9a53b358-0d65-4885-a620-3b58e1c3da74</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/verify all links on current page accessible</testCaseId>
+   </testCaseLink>
 </TestSuiteEntity>

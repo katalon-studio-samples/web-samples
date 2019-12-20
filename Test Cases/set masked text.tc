@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>set masked text</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>452a1358-7872-4b59-b136-5318ac010680</testCaseGuid>
+   <variable>
+      <defaultValue>'demo First Name'</defaultValue>
+      <description></description>
+      <id>a1bf13a2-d88d-4558-b017-1d09569415e4</id>
+      <masked>false</masked>
+      <name>firstName</name>
+   </variable>
+</TestCaseEntity>
