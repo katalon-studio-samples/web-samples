@@ -1,0 +1,35 @@
+name: CI
+
+on: 
+  push:
+    branches:
+    - master
+  schedule:
+  - cron: "0 8 * * 1-5"
+
+jobs:
+  build:
+
+    runs-on: macos-latest
+    env:
+      KATALON_BUNDLE_CLASSES: katalon_classes
+
+    steps:
+    - name: Check out
+      uses: actions/checkout@v1
+      
+    - name: Download KRE
+      run: |
+        Invoke-WebRequest -Uri "$Env:KRE_DOWNLOAD_LINK" -OutFile "katalon.zip"
+        unzip katalon.zip
+        rm katalon.zip
+      env:
+        KRE_DOWNLOAD_LINK: https://download.katalon.com/7.2.1/Katalon_Studio_Engine_Windows_64-7.2.1.zip
+
+    - name: Extract Katalon bundle jar files
+      run: |
+        mkdir $KATALON_BUNDLE_CLASSES
+        ./tools/extract-katalon-bundles.sh "$JAR_DIR" "$EXTRACT_DIR"
+      env:
+        JAR_DIR: Katalon_Studio_Engine_Windows_64-7.2.1/Contents/Eclipse/plugins     
+      
