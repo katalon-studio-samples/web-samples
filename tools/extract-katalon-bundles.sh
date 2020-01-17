@@ -14,10 +14,9 @@ extract () {
 rm -rf "$OUTPUT_DIR"/*
 
 cd "$JARS_DIR"
-for jar in $(ls ./*katalon*.jar)
+for file in *katalon*
 do
-  echo $jar
-  extract $jar
+  extract $file
 done
 
 cd $OUTPUT_DIR
