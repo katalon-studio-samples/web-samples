@@ -29,6 +29,7 @@ jobs:
 
     - name: Extract Katalon bundle jar files
       run: |
+        pwd
         mkdir ./$KATALON_BUNDLE_CLASSES
         ./tools/extract-katalon-bundles.sh "$JAR_DIR" "$KATALON_BUNDLE_CLASSES"
       env:
