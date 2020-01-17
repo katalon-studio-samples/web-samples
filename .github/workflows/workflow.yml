@@ -13,25 +13,42 @@ jobs:
     runs-on: macos-latest
     env:
       KATALON_BUNDLE_CLASSES: katalon_classes
+      JACOCO_REPORT_DIR: jacoco_report
+      JACOCO_LIB_DIR: tools/jacoco/lib
 
     steps:
     - name: Check out
       uses: actions/checkout@v1
+      
+    - name: Set up
+      run: |
+        mkdir $KATALON_BUNDLE_CLASSES
+        mkdir $JACOCO_REPORT_DIR
+        brew install coreutils
       
     - name: Download KRE
       run: |
         curl -o "katalon_runtime_engine.tar.gz" "$KRE_DOWNLOAD_LINK"
         tar -xzvf katalon_runtime_engine.tar.gz
         rm katalon_runtime_engine.tar.gz
-        ls -al
       env:
         KRE_DOWNLOAD_LINK: https://download.katalon.com/7.2.1/Katalon_Studio_Engine_MacOS-7.2.1.tar.gz
-
+        
     - name: Extract Katalon bundle jar files
       run: |
-        mkdir $KATALON_BUNDLE_CLASSES
-        echo "Start extracting bundles..."
-        export JAR_DIR=$(cd "Katalon_Studio_Engine_MacOS-7.2.1/Katalon Studio Engine.app/Contents/Eclipse/plugins" && pwd)
-        export OUTPUT_DIR=$(cd $KATALON_BUNDLE_CLASSES && pwd)
+        export JAR_DIR=$(realpath "Katalon_Studio_Engine_MacOS-7.2.1/Katalon Studio Engine.app/Contents/Eclipse/plugins")
+        export OUTPUT_DIR=$(realpath $KATALON_BUNDLE_CLASSES)   
         ./tools/extract-katalon-bundles.sh "$JAR_DIR" "$OUTPUT_DIR"
+        
+    - name: Edit test project settings to inject Jacoco agent for execution
+      run: |
+        export SETTINGS_DIR=$(realpath settings/internal)
+        export REPORT_FILE=$(realpath $JACOCO_REPORT_DIR/jacoco.exec)
+        export JACOCOAGENT=$(realpath $JACOCO_LIB_DIR/jacocoagent.jar)
+        ./tools/inject-jacocoagent.sh "$SETTINGS_DIR" "$JACOCOAGENT" "$REPORT_FILE"
+        
+        
+         
+         
+         
       
