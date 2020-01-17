@@ -23,6 +23,7 @@ jobs:
         curl -o "katalon_runtime_engine.tar.gz" "$KRE_DOWNLOAD_LINK"
         tar -xzvf katalon_runtime_engine.tar.gz
         rm katalon_runtime_engine.tar.gz
+        ls -al
       env:
         KRE_DOWNLOAD_LINK: https://download.katalon.com/7.2.1/Katalon_Studio_Engine_MacOS-7.2.1.tar.gz
 
