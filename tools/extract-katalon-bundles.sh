@@ -5,7 +5,6 @@ OUTPUT_DIR="$2"
 extract () {
   jar_file="$1"
   extract_dir="$OUTPUT_DIR/${1%.jar}"
-  mkdir $extract_dir
   unzip -d "$extract_dir" "$jar_file"
 
   if [ -d "$extract_dir"/resources ]; then rm -rf "$extract_dir"/resources; fi
