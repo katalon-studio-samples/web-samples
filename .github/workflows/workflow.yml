@@ -62,7 +62,7 @@ jobs:
       run: |
         export PROJECT_PATH=$(realpath web-samples.prj)
         cd "Katalon_Studio_Engine_MacOS-7.2.3/Katalon Studio Engine.app/Contents/MacOS"
-        ./katalonc -noSplash -runMode=console -projectPath="$PROJECT_PATH" -retry=0 -testSuitePath="Test Suites/WebUI Builtin Keywords Test" -executionProfile="default" -browserType="Chrome" -apiKey="0d954e41-886c-4532-b12f-b04a06f84ff0"
+        ./katalonc -noSplash -runMode=console -projectPath="$PROJECT_PATH" -retry=0 -testSuitePath="Test Suites/WebUI Builtin Keywords Test" -executionProfile="default" -browserType="Chrome" -apiKey="${{ secrets.KRE_API_KEY }}"
         
     - name: Generate XML coverage report
       run: |
