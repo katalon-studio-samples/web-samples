@@ -54,6 +54,7 @@ jobs:
         export SETTINGS_DIR=$(realpath settings/internal)
         export REPORT_FILE=$(realpath $JACOCO_REPORT_DIR/jacoco.exec)
         export JACOCOAGENT=$(realpath $JACOCO_LIB_DIR/jacocoagent.jar)
+        touch $REPORT_FILE
         ./tools/inject-jacocoagent.sh "$SETTINGS_DIR" "$JACOCOAGENT" "$REPORT_FILE"
         cat $SETTINGS_DIR/com.kms.katalon.execution.setting.properties
         
