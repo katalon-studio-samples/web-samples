@@ -16,6 +16,7 @@ rm -rf "$OUTPUT_DIR"/*
 cd "$JARS_DIR"
 for jar in $(ls ./*katalon*.jar)
 do
+  echo $jar
   extract $jar
 done
 
