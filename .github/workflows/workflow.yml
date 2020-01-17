@@ -20,12 +20,21 @@ jobs:
     - name: Check out
       uses: actions/checkout@v1
       
-    - name: Set up
+    - name: Setup Java
+      uses: actions/setup-java@master
+      with:
+        java-version: 1.8
+        java-package: jre
+      
+    - name: Install coreutils
+      run:
+        brew install coreutils
+      
+    - name: Create common directories
       run: |
         mkdir $KATALON_BUNDLE_CLASSES
         mkdir $JACOCO_REPORT_DIR
-        brew install coreutils
-      
+              
     - name: Download KRE
       run: |
         curl -o "katalon_runtime_engine.tar.gz" "$KRE_DOWNLOAD_LINK"
@@ -53,8 +62,12 @@ jobs:
         cd "Katalon_Studio_Engine_MacOS-7.2.1/Katalon Studio Engine.app/Contents/MacOS"
         ./katalonc -noSplash -runMode=console -projectPath="$PROJECT_PATH" -retry=0 -testSuitePath="Test Suites/WebUI Builtin Keywords Test" -executionProfile="default" -browserType="Chrome" -apiKey="0d954e41-886c-4532-b12f-b04a06f84ff0"
         
-        
-         
-         
+    - name: Generate XML coverage report
+      run: |
+        export JACOCO_EXEC_FILE=$(realpath $JACOCO_REPORT_DIR/jacoco.exec)
+        export XML_REPORT_FILE=$(realpath $JACOCO_REPORT_DIR/jacoco.xml)
+        export JACOCOCLI=$JACOCO_LIB_DIR/jacococli.jar
+        touch $XML_REPORT_FILE
+        java -jar $JACOCOCLI report $JACOCO_EXEC_FILE --classfiles $KATALON_BUNDLE_CLASSES --xml $XML_REPORT_FILE
          
       
