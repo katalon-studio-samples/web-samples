@@ -31,7 +31,8 @@ jobs:
       run: |
         mkdir $KATALON_BUNDLE_CLASSES
         echo "Start extracting bundles..."
-        ./tools/extract-katalon-bundles.sh $(realpath "$JAR_DIR") $(realpath "$KATALON_BUNDLE_CLASSES")
+        ./tools/extract-katalon-bundles.sh "$JAR_DIR" "$OUTPUT_DIR"
       env:
-        JAR_DIR: Katalon_Studio_Engine_MacOS-7.2.1/Katalon Studio Engine.app/Contents/Eclipse/plugins   
+        JAR_DIR: $(cd Katalon_Studio_Engine_MacOS-7.2.1/Katalon Studio Engine.app/Contents/Eclipse/plugins && pwd)
+        OUTPUT_DIR: $(cd $KATALON_BUNDLE_CLASSES && pwd)
       
