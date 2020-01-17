@@ -20,16 +20,16 @@ jobs:
       
     - name: Download KRE
       run: |
-        curl -o "katalon.tar.gz" "$KRE_DOWNLOAD_LINK"
-        tar -xzvf katalon.tar.gz
-        rm katalon.tar.gz
+        curl -o "katalon_runtime_engine.tar.gz" "$KRE_DOWNLOAD_LINK"
+        tar -xzvf katalon_runtime_engine.tar.gz
+        rm katalon_runtime_engine.tar.gz
       env:
         KRE_DOWNLOAD_LINK: https://download.katalon.com/7.2.1/Katalon_Studio_Engine_MacOS-7.2.1.tar.gz
 
     - name: Extract Katalon bundle jar files
       run: |
         mkdir $KATALON_BUNDLE_CLASSES
-        ./tools/extract-katalon-bundles.sh "$JAR_DIR" "$EXTRACT_DIR"
+        ./tools/extract-katalon-bundles.sh "$JAR_DIR" "$KATALON_BUNDLE_CLASSES"
       env:
-        JAR_DIR: Katalon_Studio_Engine_Windows_64-7.2.1/Contents/Eclipse/plugins     
+        JAR_DIR: Katalon_Studio_Engine_MacOS-7.2.1/Katalon Studio Engine/Contents/Eclipse/plugins     
       
