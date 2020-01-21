@@ -17,5 +17,3 @@ def firstnameInput = findTestObject('Object Repository/Page_Demo AUT/input_First
 WebUI.setEncryptedText(firstnameInput, encryptedText)
 
 WebUI.verifyElementAttributeValue(firstnameInput, "value", rawText, GlobalVariable.defaultTimeout)
-
-assert 1 == 2
