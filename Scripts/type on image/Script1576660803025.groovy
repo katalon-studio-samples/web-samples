@@ -15,10 +15,14 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.openBrowser(GlobalVariable.sampleAUTImagePage)
+WebUI.openBrowser(GlobalVariable.sampleAUTTypeOnImagePage)
 
 TestObject image = findTestObject('Page_Demo AUT/image')
 
+TestObject textInputOnImage = findTestObject('Object Repository/Page_Demo AUT/input_Capture object_text-on-image')
+
+WebUI.verifyImagePresent(image)
+
 WebUI.typeOnImage(image, 'My name is blah blah...')
 
-WebUI.verifyTextPresent('My name is blah blah', false)
+WebUI.verifyElementAttributeValue(textInputOnImage, "value",  'My name is blah blah...', GlobalVariable.defaultTimeout)

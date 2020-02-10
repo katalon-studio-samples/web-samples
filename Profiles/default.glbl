@@ -139,4 +139,9 @@
       <initValue>'http://katalon-test.s3.amazonaws.com/aut/html/page-load.html'</initValue>
       <name>sampleAUTPageLoadPage</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://katalon-test.s3.amazonaws.com/aut/html/type-on-image.html'</initValue>
+      <name>sampleAUTTypeOnImagePage</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

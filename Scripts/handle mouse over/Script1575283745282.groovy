@@ -30,9 +30,3 @@ WebUI.mouseOverOffset(hoverableObject, 20, 20)
 
 'Verify a text is present as a result of hovering over the element with a relative position'
 WebUI.verifyTextPresent("The div is hovered!", false)
-
-'Move the mouse over the element with a relative position that is outside the element'
-WebUI.mouseOverOffset(hoverableObject, 300, 300)
-
-'Verify the text is not present because the mouse is outside the element'
-WebUI.verifyTextNotPresent("The div is hovered!", false)
