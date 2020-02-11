@@ -17,5 +17,5 @@ import internal.GlobalVariable as GlobalVariable
 
 WebUI.openBrowser(GlobalVariable.sampeAUTIndexPage)
 
-WebUI.verifyEqual(WebUI.getPageHeight(), 988)
+WebUI.verifyGreaterThan(WebUI.getPageHeight(), 500)
 

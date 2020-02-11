@@ -17,8 +17,9 @@ import internal.GlobalVariable as GlobalVariable
 
 WebUI.openBrowser(GlobalVariable.sampleAUTLinkPage)
 
+String test = WebUI.getAllLinksOnCurrentPage(true, null)
 
-//String test = WebUI.getAllLinksOnCurrentPage(true, null)
-//println 'loan test: ' + test
+String excludedChromeExtensionLink = test.substring(test.indexOf('chrome-extension'), test.lastIndexOf('wait.js') + 7)
 
-WebUI.verifyAllLinksOnCurrentPageAccessible(true, ['chrome-extension://eejfneeibecbckkfmnnlhmjfmjicghmc/content/wait.js'])
+WebUI.verifyAllLinksOnCurrentPageAccessible(true, [excludedChromeExtensionLink])
+ 
