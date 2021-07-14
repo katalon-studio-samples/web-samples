@@ -1,0 +1,10 @@
+{
+  "keywordFileContentHash": "AEF37A1AD8B387A08D3F75EC59946369",
+  "keywordClasses": [
+    {
+      "name": "katalon.helper.FileHelper",
+      "keywordMethods": []
+    }
+  ],
+  "javadocParsed": true
+}

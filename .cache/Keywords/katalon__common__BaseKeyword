@@ -1,0 +1,10 @@
+{
+  "keywordFileContentHash": "307C1E60AAB6E3A79C864148588FD4D4",
+  "keywordClasses": [
+    {
+      "name": "katalon.common.BaseKeyword",
+      "keywordMethods": []
+    }
+  ],
+  "javadocParsed": true
+}

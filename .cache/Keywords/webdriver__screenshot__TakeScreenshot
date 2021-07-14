@@ -1,0 +1,62 @@
+{
+  "keywordFileContentHash": "B892ED0A90805AE3E789E8202E18D7F8",
+  "keywordClasses": [
+    {
+      "name": "webdriver.screenshot.TakeScreenshot",
+      "keywordMethods": [
+        {
+          "name": "takeScreenshot",
+          "parameters": [
+            {
+              "name": "expectedFilename",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            },
+            {
+              "name": "flowControl",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "com.kms.katalon.core.model.FailureHandling",
+                "unresolvedClassName": "FailureHandling",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": "/**\n\t * Verify two images are matched or not\n\t * @param expectedImgPath the location of expected image\n\t * @param actualImgPath the location of actual image\n\t * @return\n\t */"
+        },
+        {
+          "name": "takeScreenshot",
+          "parameters": [
+            {
+              "name": "expectedFilename",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": ""
+        }
+      ]
+    }
+  ],
+  "javadocParsed": true
+}

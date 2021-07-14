@@ -1,0 +1,10 @@
+{
+  "keywordFileContentHash": "6C633E39A886FDA997AE41839CA6421F",
+  "keywordClasses": [
+    {
+      "name": "katalon.common.ErrorHandler",
+      "keywordMethods": []
+    }
+  ],
+  "javadocParsed": true
+}
