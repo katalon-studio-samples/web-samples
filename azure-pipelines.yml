@@ -58,5 +58,5 @@ stages:
         ls -al "$(pwd)/web-samples.prj"
         cd '/Users/runner/work/1/s/Test Suites'
         ls -al
-        "$kataloncPath" -apiKey="f94fd9eb-459b-4115-8980-e632fb614490" -projectPath="$projectPath" -testSuitePath="Test Suites/QTest" -browserType="Chrome" --config -webui.autoUpdateDrivers=${AUTO_UPDATE_WEBDRIVERS}
+        "$kataloncPath" -apiKey="f94fd9eb-459b-4115-8980-e632fb614490" -projectPath="$projectPath" -testSuitePath="Test Suites/WebUI Builtin Keywords Test" -browserType="Chrome" --config -webui.autoUpdateDrivers=${AUTO_UPDATE_WEBDRIVERS}
       displayName: Run WebUI Keywords Test
