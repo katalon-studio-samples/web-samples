@@ -1,0 +1,62 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+
+name: KS Regression Automation
+
+## this configuration is ignored since the pipeline is already connected to github
+## and there is already a step checkout to clone script from github under 'steps'
+# resources: 
+#   repositories:
+  # - repository: WebUIKeywordsTest
+  #   type: github
+  #   ref: refs/heads/master
+  #   name: katalon-studio-samples/web-samples
+  #   endpoint: github.com_kms-loantran
+
+trigger:
+  - master
+
+pool:
+  vmImage: macOS-latest
+
+stages:
+- stage: Test
+  displayName: Run Automation script
+  jobs:
+  - job: TestOnMac
+    displayName: Run automation script on Mac
+    continueOnError: true
+    variables:  # job-level
+      VERSION: '8.1.0'
+      AUTO_UPDATE_WEBDRIVERS: false
+      WORK_DIR: $(Build.Repository.LocalPath)
+      TMP_DIR: $(Build.ArtifactStagingDirectory)
+    steps:
+    - checkout: self
+      clean: true
+      fetchDepth: 1
+    - bash: |
+        set -ex
+        curl "https://download.katalon.com/${VERSION}/Katalon_Studio_Engine_MacOS-${VERSION}.tar.gz" -o katalon_runtime_engine.tar.gz
+      displayName: download KRE package
+    - bash: |
+        set -ex
+        tar -xvf katalon_runtime_engine.tar.gz
+      displayName: unzip KRE package
+    - script: |
+        set -ex
+        kataloncPath="$(pwd)/Katalon_Studio_Engine_MacOS-${VERSION}/Katalon Studio Engine.app/Contents/MacOS/katalonc"
+        projectPath="${WORK_DIR}/web-samples/web-samples.prj"
+        testSuite="${WORK_DIR}/web-samples/Test Suites"
+        ls -al
+        echo $projectPath
+        echo $katalonc
+        echo $testSuite
+        ls -al "$(pwd)/web-samples/web-samples.prj"
+        cd '/Users/runner/work/1/s/web-samples/Test Suites'
+        ls -al
+        "$kataloncPath" -apiKey="f94fd9eb-459b-4115-8980-e632fb614490" -projectPath="$projectPath" -testSuitePath="Test Suites/QTest" -browserType="Chrome" --config -webui.autoUpdateDrivers=${AUTO_UPDATE_WEBDRIVERS}
+      displayName: Run WebUI Keywords Test
