@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestSuiteEntity>
    <description></description>
-   <name>WebUI Builtin Keywords Test</name>
+   <name>WebUI Keywords Test</name>
    <tag></tag>
    <isRerun>false</isRerun>
    <mailRecipient></mailRecipient>
@@ -9,6 +9,7 @@
    <pageLoadTimeout>30</pageLoadTimeout>
    <pageLoadTimeoutDefault>true</pageLoadTimeoutDefault>
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
+   <rerunImmediately>false</rerunImmediately>
    <testSuiteGuid>40fc9a6d-acef-4dbd-8db1-5fd1bb8d41db</testSuiteGuid>
    <testCaseLink>
       <guid>f2b5b9bc-08c8-491a-abb1-ebc45af1960d</guid>
