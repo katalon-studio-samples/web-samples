@@ -49,14 +49,14 @@ stages:
     - script: |
         set -ex
         kataloncPath="$(pwd)/Katalon_Studio_Engine_MacOS-${VERSION}/Katalon Studio Engine.app/Contents/MacOS/katalonc"
-        projectPath="${WORK_DIR}/web-samples/web-samples.prj"
-        testSuite="${WORK_DIR}/web-samples/Test Suites"
+        projectPath="${WORK_DIR}/web-samples.prj"
+        testSuite="${WORK_DIR}/Test Suites"
         ls -al
         echo $projectPath
         echo $katalonc
         echo $testSuite
-        ls -al "$(pwd)/web-samples/web-samples.prj"
-        cd '/Users/runner/work/1/s/web-samples/Test Suites'
+        ls -al "$(pwd)/web-samples.prj"
+        cd '/Users/runner/work/1/s/Test Suites'
         ls -al
         "$kataloncPath" -apiKey="f94fd9eb-459b-4115-8980-e632fb614490" -projectPath="$projectPath" -testSuitePath="Test Suites/QTest" -browserType="Chrome" --config -webui.autoUpdateDrivers=${AUTO_UPDATE_WEBDRIVERS}
       displayName: Run WebUI Keywords Test
