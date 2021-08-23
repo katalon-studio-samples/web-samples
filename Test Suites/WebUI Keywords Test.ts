@@ -371,4 +371,52 @@
       <isRun>true</isRun>
       <testCaseId>Test Cases/verify all links on current page accessible</testCaseId>
    </testCaseLink>
+   <testCaseLink>
+      <guid>61cf1e14-6f2d-476c-8465-cf242790eb07</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/click image</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>42dca9f1-09ab-4ac1-92ca-0a5fae0b9d8f</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/wait for element clickable</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>3785de26-c203-46c3-ab99-ca88051b4294</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/wait for element not clickable</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>6ec2eee8-6828-4760-bc14-0f0d6c2891e3</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/wait for element not visible</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>c613a579-3451-4c20-a9a5-994660e15dfb</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/wait for element visible</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>7aa1e275-72da-4b15-85ff-28a40b42da12</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/wait for image present</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>d8d97d5f-7af8-435f-a88c-5ffb4efb40d9</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/wait for page load</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>a734358f-11cf-480d-86dd-523b78f5e829</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/jquery load</testCaseId>
+   </testCaseLink>
 </TestSuiteEntity>
