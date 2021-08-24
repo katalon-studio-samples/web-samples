@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>take element screenshot</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>809ad9f1-6ac6-4aea-bd6f-36096b0ff12e</testCaseGuid>
+   <variable>
+      <defaultValue>'customer'</defaultValue>
+      <description></description>
+      <id>cc9f99dd-def3-4f78-a3f9-2fbb5e28ce65</id>
+      <masked>false</masked>
+      <name>username</name>
+   </variable>
+   <variable>
+      <defaultValue>'crz7mrb.KNG3yxv1fbn'</defaultValue>
+      <description></description>
+      <id>f898f2e6-64de-4321-8fc0-de1b344e4c39</id>
+      <masked>false</masked>
+      <name>password</name>
+   </variable>
+   <variable>
+      <defaultValue>'//a[text() = \'Katalon Shop\' or . = \'Katalon Shop\']'</defaultValue>
+      <description></description>
+      <id>e7922641-734f-42fe-8558-de1c8a19a8dd</id>
+      <masked>false</masked>
+      <name>elementLocator</name>
+   </variable>
+</TestCaseEntity>
