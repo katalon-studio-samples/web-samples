@@ -371,4 +371,76 @@
       <isRun>true</isRun>
       <testCaseId>Test Cases/verify all links on current page accessible</testCaseId>
    </testCaseLink>
+   <testCaseLink>
+      <guid>61cf1e14-6f2d-476c-8465-cf242790eb07</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/click image</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>42dca9f1-09ab-4ac1-92ca-0a5fae0b9d8f</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/wait for element clickable</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>3785de26-c203-46c3-ab99-ca88051b4294</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/wait for element not clickable</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>6ec2eee8-6828-4760-bc14-0f0d6c2891e3</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/wait for element not visible</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>c613a579-3451-4c20-a9a5-994660e15dfb</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/wait for element visible</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>7aa1e275-72da-4b15-85ff-28a40b42da12</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/wait for image present</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>d8d97d5f-7af8-435f-a88c-5ffb4efb40d9</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/wait for page load</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>a734358f-11cf-480d-86dd-523b78f5e829</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/jquery load</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>b16592f8-dbf5-4ac2-bf0e-15ad88290189</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/take element screenshot</testCaseId>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>cc9f99dd-def3-4f78-a3f9-2fbb5e28ce65</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>f898f2e6-64de-4321-8fc0-de1b344e4c39</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>e7922641-734f-42fe-8558-de1c8a19a8dd</variableId>
+      </variableLink>
+   </testCaseLink>
 </TestSuiteEntity>

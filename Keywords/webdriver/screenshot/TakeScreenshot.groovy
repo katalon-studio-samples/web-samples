@@ -1,39 +1,26 @@
 package webdriver.screenshot
 
-import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
-import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
-import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
-import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
-import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
+import javax.imageio.ImageIO
+import java.awt.image.BufferedImage;
+
+import org.apache.commons.io.FileUtils
+import org.openqa.selenium.*;
 
 import com.kms.katalon.core.annotation.Keyword
-import com.kms.katalon.core.checkpoint.Checkpoint
-import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
-import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 import com.kms.katalon.core.model.FailureHandling
-import com.kms.katalon.core.testcase.TestCase
-import com.kms.katalon.core.testdata.TestData
-import com.kms.katalon.core.testobject.TestObject
-import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
-import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
-import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
-import internal.GlobalVariable
+import com.kms.katalon.core.webui.driver.DriverFactory
 
 import katalon.common.BaseKeyword
-
-import org.openqa.selenium.WebDriver
-import com.kms.katalon.core.webui.driver.DriverFactory as DriverFactory
-import org.apache.commons.io.FileUtils
-import org.openqa.selenium.OutputType
-import org.openqa.selenium.TakesScreenshot
-
+import ru.yandex.qatools.ashot.AShot
+import ru.yandex.qatools.ashot.Screenshot
+import ru.yandex.qatools.ashot.shooting.ShootingStrategies
 
 public class TakeScreenshot extends BaseKeyword {
 
 	/**
-	 * Verify two images are matched or not
-	 * @param expectedImgPath the location of expected image
-	 * @param actualImgPath the location of actual image
+	 * Take screenshot of current view
+	 * @param expectedFilename the location of expected image
+	 * @param flowControl control behavior of the execution
 	 * @return
 	 */
 	@Keyword
@@ -48,6 +35,33 @@ public class TakeScreenshot extends BaseKeyword {
 
 			//Move image file to new destination
 			File DestFile = new File(expectedFilename)
+
+			//Copy file at destination
+			FileUtils.copyFile(SrcFile, DestFile)
+		}catch(ex){
+			handleError(ex, flowControl)
+		}
+	}
+
+	/**
+	 * Take screenshot of the element
+	 * @param expectedFilename the location of expected image
+	 * @param elementLocator the locator of desired element to take screenshot
+	 * @param flowControl control behavior of the execution
+	 * @return
+	 */
+	@Keyword
+	public void takeElementScreenshot(String expectedFilename, String elementLocator, FailureHandling flowControl = FailureHandling.STOP_ON_FAILURE){
+		WebDriver driver = DriverFactory.getWebDriver()
+		try{
+			//Locate the web element
+			WebElement logo = driver.findElement(By.xpath(elementLocator));
+
+			//Define new destination for image file
+			File DestFile = new File(expectedFilename)
+
+			//Call getScreenshotAs method to create image file
+			File SrcFile = logo.getScreenshotAs(OutputType.FILE)
 
 			//Copy file at destination
 			FileUtils.copyFile(SrcFile, DestFile)

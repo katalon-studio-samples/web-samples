@@ -133,4 +133,14 @@ WebUI.verifyOptionSelectedByLabel(multiselectBox, "Good teamwork", false, Global
 
 WebUI.deselectAllOption(multiselectBox)
 
+'Reselect the second and fourth options which have index in range 1, 2 (range starts from 0)'
+WebUI.selectOptionByIndex(multiselectBox, "1, 3", FailureHandling.CONTINUE_ON_FAILURE)
+
+WebUI.verifyOptionSelectedByIndex(multiselectBox, "1, 3", GlobalVariable.defaultTimeout, FailureHandling.CONTINUE_ON_FAILURE)
+
+WebUI.verifyEqual(WebUI.getNumberOfSelectedOption(multiselectBox), 2, FailureHandling.CONTINUE_ON_FAILURE)
+
+WebUI.deselectAllOption(multiselectBox)
+
 WebUI.verifyEqual(WebUI.getNumberOfSelectedOption(multiselectBox), 0)
+
