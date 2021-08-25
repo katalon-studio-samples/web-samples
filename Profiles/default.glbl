@@ -144,4 +144,9 @@
       <initValue>'https://katalon-test.s3.amazonaws.com/aut/html/type-on-image.html'</initValue>
       <name>sampleAUTTypeOnImagePage</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>for taking screenshot</description>
+      <initValue>'https://cms.demo.katalon.com/my-account/'</initValue>
+      <name>sampleAUTShoppingCart</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>
