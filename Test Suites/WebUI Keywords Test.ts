@@ -443,4 +443,16 @@
          <variableId>e7922641-734f-42fe-8558-de1c8a19a8dd</variableId>
       </variableLink>
    </testCaseLink>
+   <testCaseLink>
+      <guid>52341629-bec4-447b-ac62-1b02ed7a2083</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/handle element with smart wait function</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>fbda458e-ad43-4cab-a744-14571e19c88a</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/upload file by drag and drop</testCaseId>
+   </testCaseLink>
 </TestSuiteEntity>

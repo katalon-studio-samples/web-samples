@@ -37,3 +37,7 @@ WebUI.rightClick(clickButton)
 
 WebUI.verifyTextPresent("You have right clicked the button!", false)
 
+WebUI.enhancedClick(clickButton)
+
+WebUI.verifyTextPresent("You have clicked the button!", false)
+
