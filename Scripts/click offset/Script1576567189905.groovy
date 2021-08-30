@@ -26,3 +26,11 @@ WebUI.verifyTextNotPresent('You have clicked the button', false)
 WebUI.clickOffset(btn, 10, 10)
 
 WebUI.verifyTextPresent('You have clicked the button', false)
+
+WebUI.rightClickOffset(btn, 150, 100)
+
+WebUI.verifyTextNotPresent('You have right clicked the button', false)
+
+WebUI.rightClickOffset(btn, 10, 10)
+
+WebUI.verifyTextPresent('You have right clicked the button', false)

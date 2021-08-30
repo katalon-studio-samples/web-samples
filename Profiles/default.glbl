@@ -149,4 +149,14 @@
       <initValue>'https://cms.demo.katalon.com/my-account/'</initValue>
       <name>sampleAUTShoppingCart</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://imgur.com/upload?beta'</initValue>
+      <name>sampleAUTUploadImgByDragAndDrop</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://demo.tutorialzine.com/2009/09/simple-ajax-website-jquery/demo.html'</initValue>
+      <name>sampleAJAXWebsiteForSmartWait</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

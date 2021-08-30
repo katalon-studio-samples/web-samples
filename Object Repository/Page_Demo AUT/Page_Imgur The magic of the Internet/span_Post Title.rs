@@ -1,78 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>textarea_Comment_comment</name>
+   <name>span_Post Title</name>
    <tag></tag>
-   <elementGuidId>b12df6f5-7eca-4127-8009-90a488c27c84</elementGuidId>
+   <elementGuidId>5d003b8f-fe6c-4f72-86cf-3aec8ad25c60</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//textarea[@id='comment']</value>
+         <value>//div[4]/div/div/div/div/span</value>
+      </entry>
+      <entry>
+         <key>BASIC</key>
+         <value>//*[@placeholder = 'Give your post a title...']</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value>div.UploadPost-postTitle > span.UploadPost-editable</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
-   <useRalativeImagePath>false</useRalativeImagePath>
+   <useRalativeImagePath>true</useRalativeImagePath>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>tag</name>
       <type>Main</type>
-      <value>textarea</value>
+      <value>span</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>class</name>
       <type>Main</type>
-      <value>form-control</value>
+      <value>UploadPost-editable</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
-      <name>rows</name>
+      <name>contenteditable</name>
       <type>Main</type>
-      <value>5</value>
+      <value>true</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
-      <name>id</name>
+      <name>placeholder</name>
       <type>Main</type>
-      <value>comment</value>
+      <value>Give your post a title...</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>true</isSelected>
+      <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
-      <name>name</name>
+      <name>tabindex</name>
       <type>Main</type>
-      <value>comment</value>
+      <value>21</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>id(&quot;comment&quot;)</value>
+      <value>id(&quot;root&quot;)/div[1]/div[@class=&quot;desktop-app App&quot;]/div[@class=&quot;Upload&quot;]/div[@class=&quot;Upload-container&quot;]/div[@class=&quot;UploadPost&quot;]/div[@class=&quot;UploadPost-files&quot;]/div[1]/div[@class=&quot;UploadPost-postTitle&quot;]/span[@class=&quot;UploadPost-editable&quot;]</value>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
-      <name>xpath:attributes</name>
-      <type>Main</type>
-      <value>//textarea[@id='comment']</value>
-   </webElementXpaths>
-   <webElementXpaths>
-      <isSelected>false</isSelected>
-      <matchCondition>equals</matchCondition>
       <name>xpath:idRelative</name>
       <type>Main</type>
-      <value>//form[@id='infoForm']/div[12]/div/textarea</value>
+      <value>//div[@id='root']/div/div/div/div[4]/div/div/div/div/span</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:position</name>
       <type>Main</type>
-      <value>//textarea</value>
+      <value>//div[4]/div/div/div/div/span</value>
    </webElementXpaths>
 </WebElementEntity>
