@@ -142,5 +142,5 @@ WebUI.verifyEqual(WebUI.getNumberOfSelectedOption(multiselectBox), 2, FailureHan
 
 WebUI.deselectAllOption(multiselectBox)
 
-WebUI.verifyEqual(WebUI.getNumberOfSelectedOption(multiselectBox), 0)
+WebUI.verifyLessThanOrEqual(WebUI.getNumberOfSelectedOption(multiselectBox), 0)
 

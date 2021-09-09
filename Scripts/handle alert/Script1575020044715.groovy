@@ -49,3 +49,11 @@ WebUI.verifyAlertNotPresent(1)
 WebUI.waitForAlert(10)
 
 WebUI.verifyAlertPresent(1)
+
+WebUI.verifyNotMatch(WebUI.getAlertText(), "This is an alert box.", false)
+
+WebUI.verifyMatch(WebUI.getAlertText(), "This is an alert box that will show up after 10 seconds.", false)
+
+String message = WebUI.concatenate(['Text of alert after 10 seconds is: ', WebUI.getAlertText()] as String[], FailureHandling.STOP_ON_FAILURE)
+
+WebUI.comment('Text after concatenation is: ' +message)
