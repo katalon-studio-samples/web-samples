@@ -455,4 +455,10 @@
       <isRun>true</isRun>
       <testCaseId>Test Cases/upload file by drag and drop</testCaseId>
    </testCaseLink>
+   <testCaseLink>
+      <guid>358edefe-6047-4e4c-a6bd-36c09d3bc53d</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/handle common keywords with WebUI</testCaseId>
+   </testCaseLink>
 </TestSuiteEntity>
