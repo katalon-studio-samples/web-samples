@@ -35,7 +35,7 @@ def concatenatedFilePath = (((filePath + '\n') + filePath1) + '\n') + filePath2
 WebUI.uploadFileWithDragAndDrop(concatenatedFilePath)
 
 "Verify image uploaded by checking textbox 'Post title' - only appear after images upload to create a post"
-WebUI.verifyElementPresent(findTestObject('Object Repository/Page_Demo AUT/Page_Imgur The magic of the Internet/span_Post Title'), 10)
+WebUI.verifyElementPresent(findTestObject('Object Repository/Page_Demo AUT/Page_Imgur The magic of the Internet/span_Post Title'), 10, FailureHandling.OPTIONAL)
 	
 "Verify image uploaded by checking 'Sign in' button"
 WebUI.verifyElementPresent(findTestObject('Object Repository/Page_Demo AUT/Page_Imgur The magic of the Internet/a_Sign in'), 10)
