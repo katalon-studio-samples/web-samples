@@ -32,3 +32,9 @@ WebUI.verifyLessThan(cookies, 0, FailureHandling.OPTIONAL)
 WebUI.verifyGreaterThan(cookies, 0)
 
 WebUI.comment("The cookies observed is: " + cookies)
+
+'This checkpoint marked the data and Source data are NOT matched'
+boolean isFalse = WebUI.verifyCheckpoint(findCheckpoint('Checkpoints/Checkpoint - James'), true, FailureHandling.OPTIONAL)
+
+'This checkpoint marked the data and Source data are matched'
+boolean isTrue = WebUI.verifyCheckpoint(findCheckpoint('Checkpoints/Checkpoint - Yaya info'), false)
