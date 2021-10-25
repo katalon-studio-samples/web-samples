@@ -20,7 +20,9 @@ trigger:
   - master
 
 pool:
-  vmImage: macOS-latest
+  name: vicky
+  demands:
+   - agent.Name -equals VickyTest
 
 stages:
 - stage: Test
