@@ -28,6 +28,7 @@ String textInPage2 = "Aliquam imperdiet tempor facilisis. Sed elementum ultrices
 
 WebUI.openBrowser('')
 "Navigate to a ajax website - required to wait a few for loading content"
+
 WebUI.navigateToUrl(GlobalVariable.sampleAJAXWebsiteForSmartWait)
 
 WebUI.click(page1)
@@ -42,6 +43,8 @@ WebUI.click(page2)
 
 'Without enableSmartWait, this step should be failed due to no wait for loading content - mark steps as warning'
 WebUI.verifyElementText(contentPage2, textInPage2, FailureHandling.OPTIONAL)
+
+WebUI.navigateToUrl(GlobalVariable.sampleAJAXWebsiteForSmartWait)
 
 WebUI.click(page1)
 
