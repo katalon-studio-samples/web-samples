@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkpoint>
+   <description></description>
+   <name>Checkpoint - James</name>
+   <tag></tag>
+   <source-info>
+      <is-from-test-data>true</is-from-test-data>
+      <source-url>Data Files/Source file for Checkpoints</source-url>
+   </source-info>
+   <taken-date>2021-09-09T14:51:21.035</taken-date>
+   <column-names>
+      <column-name>Name</column-name>
+      <column-name>Age</column-name>
+      <column-name>Address</column-name>
+   </column-names>
+   <checkpoint-data><![CDATA[[
+  [
+    {
+      "value": "James",
+      "checked": true
+    },
+    {
+      "value": "27",
+      "checked": false
+    },
+    {
+      "value": "CH3",
+      "checked": false
+    }
+  ],
+  [
+    {
+      "value": "Yaya",
+      "checked": false
+    },
+    {
+      "value": "40",
+      "checked": false
+    },
+    {
+      "value": "CH7",
+      "checked": false
+    }
+  ],
+  [
+    {
+      "value": "Maew",
+      "checked": false
+    },
+    {
+      "value": "35",
+      "checked": false
+    },
+    {
+      "value": "Not",
+      "checked": false
+    }
+  ]
+]]]></checkpoint-data>
+</checkpoint>

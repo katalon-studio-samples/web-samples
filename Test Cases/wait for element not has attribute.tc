@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>wait for element not has attribute</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>641dd72f-8718-4a20-9126-26a3f3113bcc</testCaseGuid>
+</TestCaseEntity>

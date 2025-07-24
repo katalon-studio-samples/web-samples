@@ -1,0 +1,38 @@
+import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
+import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
+import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
+import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
+import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
+import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
+import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
+import com.kms.katalon.core.model.FailureHandling as FailureHandling
+import com.kms.katalon.core.testcase.TestCase as TestCase
+import com.kms.katalon.core.testdata.TestData as TestData
+import com.kms.katalon.core.testobject.TestObject as TestObject
+import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
+import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
+import internal.GlobalVariable as GlobalVariable
+
+WebUI.openBrowser(GlobalVariable.sampleAUTDelayPage)
+
+'This is a div which will show up in 10 seconds'
+def helloWorldDiv = findTestObject('Object Repository/Page_Demo AUT/div_Hello World')
+
+WebUI.verifyElementNotPresent(helloWorldDiv, 1)
+
+WebUI.waitForElementPresent(helloWorldDiv, 15)
+
+WebUI.verifyElementPresent(helloWorldDiv, 1)
+
+WebUI.refresh()
+
+'This is a div which will disappear in 10 seconds'
+def divThatWillDisappear = findTestObject('Object Repository/Page_Demo AUT/div_This div will disappear in 10 seconds')
+
+WebUI.verifyElementPresent(divThatWillDisappear, 1)
+
+WebUI.waitForElementNotPresent(divThatWillDisappear, 15)
+
+WebUI.verifyElementNotPresent(divThatWillDisappear, 1)
